@@ -8,26 +8,29 @@
  */
 
 return array(
+    '*' => array(
+        // Base site URL
+        'siteUrl' => null,
 
-	// Base site URL
-	'siteUrl' => null,
+        // Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
+        'environmentVariables' => array(),
 
-	// Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
-	'environmentVariables' => array(),
+        // Default Week Start Day (0 = Sunday, 1 = Monday...)
+        'defaultWeekStartDay' => 0,
 
-	// Default Week Start Day (0 = Sunday, 1 = Monday...)
-	'defaultWeekStartDay' => 0,
+        // Enable CSRF Protection (recommended, will be enabled by default in Craft 3)
+        'enableCsrfProtection' => true,
 
-	// Enable CSRF Protection (recommended, will be enabled by default in Craft 3)
-	'enableCsrfProtection' => true,
+        // Whether "index.php" should be visible in URLs (true, false, "auto")
+        'omitScriptNameInUrls' => 'auto',
 
-	// Whether "index.php" should be visible in URLs (true, false, "auto")
-	'omitScriptNameInUrls' => 'auto',
+        // Control Panel trigger word
+        'cpTrigger' => 'admin',
 
-	// Control Panel trigger word
-	'cpTrigger' => 'admin',
-
-	// Dev Mode (see https://craftcms.com/support/dev-mode)
-	'devMode' => false,
-
+        // Dev Mode (see https://craftcms.com/support/dev-mode)
+        'devMode' => true
+    ),
+    'staging' => array(
+        'devMode' => false
+    )
 );
