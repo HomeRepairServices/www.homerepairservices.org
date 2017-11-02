@@ -26,6 +26,15 @@ Make `[WHEREEVER YOU CLONED THE PROJECT]/public` your server's web directory.
 
  You can do this via MAMP's 'Preferences -> Web Server' menu.
 
+### Setup Sass
+
+You'll need ruby installed on your machine. Then,
+
+```
+gem install sass
+sass --update scss:public/assets/css
+```
+
 ### Pull down the database
 
  Run a script I haven't written, yet.
@@ -41,7 +50,7 @@ Now you should be able to visit http://localhost:8888 and see a beautiful websit
 
 ## Development
 
-Changes to the schema and the data (that is, ANYTHING you do via Craft's admin interface) SHOULD BE DONE ON STAGING (diiq-homerepairservices.herokuapp.com) and then pull down the staging database.
+Changes to the schema and the data (that is, ANYTHING you do via Craft's admin interface) SHOULD BE DONE ON STAGING (https://homerepairservices.herokuapp.com) and then pull down the staging database.
 
 ```
 a_script.sh
@@ -49,6 +58,13 @@ a_script.sh
 
 This is very silly, but the world of CMSs has yet ot learn what a database migration is, so if you make your changes locally, there's no way to apply them to staging.
 
+Making changes to the Sass stylesheets? Be sure to have
+
+```
+sass --watch scss:public/assets/css
+```
+
+running in the background to keep the css files up-to-date.
 
 ## Possibly important notes I don't have a better place for
 

@@ -7,6 +7,7 @@
  * You can see a list of the default settings in craft/app/etc/config/defaults/general.php
  */
 
+$base_url = getenv('HEROKU_APP_NAME') ? ("https://" . getenv('HEROKU_APP_NAME') . ".herokuapp.com/") : getenv('SITE_URL');
 return array(
     '*' => array(
         // Base site URL
@@ -31,6 +32,10 @@ return array(
         'devMode' => true
     ),
     'staging' => array(
-        'devMode' => false
+        'devMode' => false,
+        'siteUrl' => array(
+            'en' => $base_url,
+            'es' => $base_url . '/es/'
+        )
     )
 );

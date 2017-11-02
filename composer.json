@@ -2,5 +2,10 @@
   "require": {
      "ext-mbstring": "*",
      "ext-imagick": "*"
+  },
+  "scripts": {
+    "compile": [
+      "sass --update scss:public/assets/css"
+    ]
   }
 }
