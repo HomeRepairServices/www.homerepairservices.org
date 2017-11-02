@@ -1,7 +1,9 @@
 {
   "require": {
+    "php": ">=7.1.0",
      "ext-mbstring": "*",
-     "ext-imagick": "*"
+     "ext-imagick": "*",
+    "ext-mcrypt": "^7.1"
   },
   "scripts": {
     "compile": [
