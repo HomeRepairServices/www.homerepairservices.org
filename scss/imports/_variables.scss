@@ -1,0 +1,53 @@
+// Breakpoints
+$medium-screen: 600px;
+$large-screen: 900px;
+
+// Typography
+$body-font-family: 'Lato', sans-serif;
+$heading-font-family:'Lato', sans-serif;
+
+// Font Sizes
+$base-font-size: 16px;
+
+// Line height
+$line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$border-radius: 3px;
+$spacing: 8px;
+$small-spacing: $spacing / 2;
+
+// Colors
+$font: #333;
+$font-light: #666;
+$orange: #FF9000;
+$yellow: #FFC200;
+$yellow-hover: shade($yellow, 10%);
+$green: #AFBF1D;
+$green-hover: shade($green, 10%);
+$red: #A61A00;
+$red-hover: shade($red, 10%);
+$dark-gray: lighten($black, 15%);
+$medium-gray: lighten($black, 30%);
+$medium-gray-hover: lighten($black, 17%);
+$light-gray: #eeeae6;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$action-color: $orange;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: $light-gray;
+$secondary-background-color: tint($base-border-color, 75%);
+
+$base-box-shadow: 1px 1px 1px -1px rgba(0,0,0,.14), 1px 2px 1px -1px rgba(0,0,0,.12);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.2), 1px 1px 1px -1px rgba(0,0,0,.06);
+$focus-box-shadow:  0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+$form-box-shadow-focus: $form-box-shadow, $focus-box-shadow;
