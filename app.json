@@ -1,0 +1,22 @@
+{
+  "name": "www.homerepairservices.org",
+  "scripts": {
+  },
+  "env": {
+    "CRAFT_ENV": {
+      "required": true
+    },
+    "JAWSDB_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    }
+  ]
+}
