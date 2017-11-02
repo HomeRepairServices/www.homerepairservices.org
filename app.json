@@ -8,6 +8,9 @@
     },
     "JAWSDB_URL": {
       "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "required": true
     }
   },
   "formation": {
@@ -15,6 +18,9 @@
   "addons": [
   ],
   "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    },
     {
       "url": "heroku/php"
     }

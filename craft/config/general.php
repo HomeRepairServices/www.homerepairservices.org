@@ -7,10 +7,14 @@
  * You can see a list of the default settings in craft/app/etc/config/defaults/general.php
  */
 
+$base_url = getenv('HEROKU_APP_NAME') ? ("https://" . getenv('HEROKU_APP_NAME') . ".herokuapp.com/") : (getenv('SITE_URL') || 'http://localhost:8888/');
 return array(
     '*' => array(
         // Base site URL
-        'siteUrl' => null,
+        'siteUrl' => array(
+            'en' => $base_url,
+            'es' => $base_url . '/es/'
+        ),
 
         // Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
         'environmentVariables' => array(),
