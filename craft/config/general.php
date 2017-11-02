@@ -11,7 +11,10 @@ $base_url = getenv('HEROKU_APP_NAME') ? ("https://" . getenv('HEROKU_APP_NAME') 
 return array(
     '*' => array(
         // Base site URL
-        'siteUrl' => null,
+        'siteUrl' => array(
+            'en_us' => 'http://localhost:8888/',
+            'es_us' => 'http://localhost:8888/es/'
+        ),
 
         // Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
         'environmentVariables' => array(),
@@ -34,8 +37,8 @@ return array(
     'staging' => array(
         'devMode' => false,
         'siteUrl' => array(
-            'en' => $base_url,
-            'es' => $base_url . '/es/'
+            'en_us' => $base_url,
+            'es_us' => $base_url . 'es/'
         )
     )
 );
