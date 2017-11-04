@@ -1,0 +1,13 @@
+{% extends "_layout" %}
+{% includeCssFile "/assets/css/employee-directory.css" %}
+{% block content %}
+<div id="employee-directory-page">
+    <div class="employee-list">
+        <div class="row">
+            {% for entry in craft.entries.section('employeeDirectory').find() %}
+                {% include 'employee-directory-page/_employee-item' %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

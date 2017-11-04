@@ -1,0 +1,31 @@
+@import './common';
+
+#employee-directory-page {
+    h1 {
+        @extend .page-title;
+    }
+
+    h2 {
+      color: $blue;  
+    }
+
+    .employee-list{
+        padding: 2rem;
+    }
+
+    .employee {
+        margin-bottom: 2rem;
+
+        p {
+            margin: 0;
+        }
+
+        .email {
+            color: $font-light;
+        }
+
+        .name {
+            font-weight: bold;
+        }
+    }
+}
