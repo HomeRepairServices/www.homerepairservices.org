@@ -1,0 +1,12 @@
+{% extends "_layout" %}
+{% includeCssFile "/assets/css/services-page.css" %}
+{% block content %}
+<div id="services-page">
+    <h1>
+        {{ entry.title }}
+    </h1>
+    <div class="service-body">
+        {{ entry.body }}
+    </div>
+</div>
+{% endblock %}
