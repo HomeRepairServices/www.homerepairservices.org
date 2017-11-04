@@ -24,11 +24,13 @@ $font: #333;
 $font-light: #666;
 $blue: #25418F;
 $red: #f17254;
-$green: #5bb664;
-$action-color: $blue;
-$light-grey: #ccc;
-$white: #fff;
+$red-hover: shade($red, 10%);
+$medium-gray: lighten($black, 30%);
+$light-gray: #eeeae6;
 
+
+$base-font-color: $dark-gray;
+$white: #fff;
 
 // Border
 $base-border-color: #ddd;
