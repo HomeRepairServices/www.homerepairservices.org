@@ -1,8 +1,4 @@
-@import "base";
-
-$bg-col: #aaa;
-$bg-rorange: #ff5511;
-$white: #fff;
+@import './common';
 
 #home-page {
 
@@ -11,7 +7,7 @@ $white: #fff;
         .services-entry {
             @extend .flex-col;
             @extend .flex-4;
-            background-color:  $bg-col;
+            background-color:  $light-grey;
             margin-right: 2rem;
             padding: 1.5rem;
 
@@ -21,7 +17,8 @@ $white: #fff;
         }
 
         .services-link {
-            background-color: $bg-rorange;
+            @extend .link-button;
+            background-color: $red;
             color: white;
         }
     }
