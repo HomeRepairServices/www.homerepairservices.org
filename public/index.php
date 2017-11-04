@@ -7,6 +7,10 @@ $craftPath = '../craft';
 define('CRAFT_ENVIRONMENT', getenv('CRAFT_ENV'));
 define('CRAFT_LOCALE', 'en_us');
 
+ini_set('post_max_size', '32M');
+ini_set('upload_max_filesize', '132M');
+ini_set('memory_limit', '1000M');
+
 // Do not edit below this line
 $path = rtrim($craftPath, '/').'/app/index.php';
 
