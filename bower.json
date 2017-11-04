@@ -1,0 +1,22 @@
+{
+  "name": "www.homerepairservices.org",
+  "description": "~This codebase powers http://www.homerepairservices.org.~ It doesn't, but it will soon!",
+  "main": "index.js",
+  "authors": [
+    "chris <chrischocko@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/HomeRepairServices/www.homerepairservices.org",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout": "^3.4.2",
+    "font-awesome": "^4.7.0",
+    "rangeslider.js": "^2.3.1"
+  }
+}
