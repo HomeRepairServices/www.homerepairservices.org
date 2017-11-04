@@ -1,0 +1,10 @@
+<div id="hero">
+  {% includeCssFile "/assets/css/hero.css" %}
+  {% set image = entry.hero.first() %}
+  <img src="{{ image.getUrl('heroImage') }}" class="hero" />
+  <div class="hero-title">
+    <div class="hero-blurb"></div>
+    <h3>{{ entry.smallTitleText }}</h3>
+    <h2>{{ entry.largeTitleText }}</h2>
+  </div>
+</div>

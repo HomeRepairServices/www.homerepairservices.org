@@ -2,9 +2,7 @@
 {% includeCssFile "/assets/css/board-of-directors.css" %}
 {% block content %}
 <div id="board-of-directors-page">
-    <h1>
-        {{ entry.title }}
-    </h1>
+	  {% include 'hero' %}
     <div class="page-body">
         {{ entry.body }}
     </div>
