@@ -30,4 +30,16 @@
 			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
 		{% endfor %}
 	</ul>
+
+	<h2>Services</h2>
+	<ul>
+		{% for entry in craft.entries.section('services').limit(5).find() %}
+		<h4>{{ entry.title }}</h4>
+			{{ entry.blurb }}
+			{% set image = entry.serviceImage.first() %}
+			{% if image %}
+			<img src="{{ image.url }}" />
+			{% endif %}
+		{% endfor %}
+	</ul>
 {% endblock %}
