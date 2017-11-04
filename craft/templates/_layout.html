@@ -38,15 +38,15 @@
 		</main>
 
     <div class="volunteering-banner">
-      <h2>Volunteering</h2>
+      <h2>{{ volunteerBanner.volunteerTitle }}</h2>
       <div class="volunteering-block-container">
         <div class="volunteering-block">
-          <h3>Have a Skill?</h3>
-          <div>sdkjf sldkj as;dkfj sadlfj eofinaslkefj wlkjfnihfo ajd</div>
+          <h3>{{ volunteerBanner.skilledSubtitle }}</h3>
+          <div>{{ volunteerBanner.skilledVolunteerBlurb }}</div>
         </div>
         <div class="volunteering-block">
-          <h3>Utterly Skillless?</h3>
-          <div>sdkjf sldkj as;dkfj sadlfj eofinaslkefj wlkjfnihfo ajd</div>
+          <h3>{{ volunteerBanner.unskilledSubtitle }}</h3>
+          <div>{{ volunteerBanner.unskilledVolunteerBlurb }}</div>
         </div>
       </div>
     </div>
@@ -58,9 +58,9 @@
 		  <div class="contact-us">
         <h2>Contact</h2>
         <ul>
-          <li><i class="logo"></i> 204 Address </li>
-          <li><i class="logo"></i> 302-222-3344 </li>
-          <li><i class="logo"></i><a href="mailto:email@theplace.com">email@theplace.com</a></li>
+          <li><i class="logo"></i>{{ footer.address }}</li>
+          <li><i class="logo"></i>{{ footer.telephoneNumber }}</li>
+          <li><i class="logo"></i><a href="mailto:{{footer.email}}">{{ footer.email }}</a></li>
         </ul>
       </div>
       <div class="legal"></div>
