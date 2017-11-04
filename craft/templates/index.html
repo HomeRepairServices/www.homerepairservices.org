@@ -24,6 +24,8 @@
 
 	{{ entry.body }}
 
+	{% include 'homepage/get-involved' %}
+
 	<h2>Recent News</h2>
 	<ul>
 		{% for entry in craft.entries.section('news').limit(5).find() %}

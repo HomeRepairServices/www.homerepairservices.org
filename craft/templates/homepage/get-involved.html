@@ -1,0 +1,6 @@
+<div id="home-page-get-involved">
+    <h1 class="section-header">Get Involved</h1>
+    {% for entry in craft.entries.section('services').limit(3).find() %}
+        {% include 'homepage/_get-involved-item' %}
+    {% endfor %}
+</div>
