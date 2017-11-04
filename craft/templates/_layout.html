@@ -25,7 +25,7 @@
 		<nav>
       <a href="{{ siteUrl }}"><img src="logo" class="logo" /></a>
       <ul class="nav-links">
-				<li><a href="{{ url('homepage') }}" {% if craft.request.firstSegment == 'homepage' %}class="active"{% endif %}>Home</a></li>
+				<li><a href="{{ siteUrl }}" {% if craft.request.firstSegment == 'homepage' %}class="active"{% endif %}>Home</a></li>
 				<li><a href="{{ url('aboutUs') }}" {% if craft.request.firstSegment == 'aboutUs' %}class="active"{% endif %}>About Us</a></li>
         <li><a href="{{ url('donate') }}" class="button {% if craft.request.firstSegment == 'donate' %} active{% endif %}">Donate</a></li>
 			</ul>
