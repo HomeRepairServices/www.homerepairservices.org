@@ -15,15 +15,8 @@
         }
 
         .services-entry {
-            @extend .flex-col;
-            @extend .flex-4;
             background-color:  $light-gray;
-            margin-right: 2rem;
             padding: 1.5rem;
-
-            &:last-child {
-                margin-right: 0;
-            }
         }
 
         .title-text {
@@ -41,14 +34,14 @@
         }
 
         .services-blurb-text {
-            height: 6rem;
-            overflow: hidden;
+
         }
 
         .services-link {
             @extend .link-button;
+            margin-top: 1rem;
             background-color: $red;
-            color: white;
+            color: $white;
             text-transform: uppercase;
             font-weight: bold;
 
