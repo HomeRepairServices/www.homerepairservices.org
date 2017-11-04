@@ -1,0 +1,28 @@
+@import "base";
+
+$bg-col: #aaa;
+$bg-rorange: #ff5511;
+$white: #fff;
+
+#home-page {
+
+    #home-page-get-involved {
+
+        .services-entry {
+            @extend .flex-col;
+            @extend .flex-4;
+            background-color:  $bg-col;
+            margin-right: 2rem;
+            padding: 1.5rem;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        .services-link {
+            background-color: $bg-rorange;
+            color: white;
+        }
+    }
+}
