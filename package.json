@@ -1,0 +1,22 @@
+{
+  "name": "www.homerepairservices.org",
+  "version": "1.0.0",
+  "description": "~This codebase powers http://www.homerepairservices.org.~ It doesn't, but it will soon!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HomeRepairServices/www.homerepairservices.org.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HomeRepairServices/www.homerepairservices.org/issues"
+  },
+  "homepage": "https://github.com/HomeRepairServices/www.homerepairservices.org#readme",
+  "dependencies": {
+    "bower": "^1.8.2"
+  }
+}
