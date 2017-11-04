@@ -1,0 +1,15 @@
+{% extends "_layout" %}
+
+{% block content %}
+{% for tab in entry.getFieldLayout().getTabs() %}
+<ul>
+    <li>{{ tab.name }}
+        <ul>
+            {% for field in tab.getFields() %}
+                <li>{{ field.getField() }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+</ul>
+{% endfor %}
+{% endblock %}
