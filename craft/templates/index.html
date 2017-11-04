@@ -18,12 +18,14 @@
  #}
 
 {% extends "_layout" %}
-
+{% includeCssFile "/assets/css/home-page.css" %}
 {% block content %}
+<div id="home-page">
 	<h1>{{ entry.title }}</h1>
 
 	{{ entry.body }}
 
+<<<<<<< HEAD
 	<h2>Recent News</h2>
 	<ul>
 		{% for entry in craft.entries.section('news').limit(5).find() %}
@@ -42,4 +44,10 @@
 			{% endif %}
 		{% endfor %}
 	</ul>
+=======
+	{% include 'homepage/get-involved' %}
+
+  {% include 'homepage/instafeed' %}
+</div>
+>>>>>>> origin/master
 {% endblock %}
