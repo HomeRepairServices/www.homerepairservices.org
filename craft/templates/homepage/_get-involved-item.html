@@ -1,7 +1,14 @@
 <div class="services-entry">
-    <h2 class="services-title">{{entry.title}}</h2>
-    <div class="services-blurb">
-        {{ entry.blurb }}
+    <h2 class="title-text">
+        <div class="services-small-title-text">
+            {{entry.smallTitleText|raw}}
+        </div>
+        <div class="services-large-title-text">
+            {{entry.largeTitleText}}
+        </div>
+    </h2>
+    <div class="services-blurb-text">
+        {{ entry.blurbText }}
     </div>
     <a class="services-link" href="{{entry.uri}}">
         Learn More

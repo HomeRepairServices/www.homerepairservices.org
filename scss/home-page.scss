@@ -26,7 +26,21 @@
             }
         }
 
-        .services-blurb {
+        .title-text {
+            text-transform: uppercase;
+            color: $blue;
+            margin: 0;
+        }
+
+        .services-small-title-text {
+            font-size: 1.5rem;
+        }
+
+        .services-large-title-text {
+            font-size: 3.2rem;
+        }
+
+        .services-blurb-text {
             height: 6rem;
             overflow: hidden;
         }
@@ -37,6 +51,10 @@
             color: white;
             text-transform: uppercase;
             font-weight: bold;
+
+            &:focus, &:hover{
+                background-color: darken($red, 10%);
+            }
         }
     }
 }
