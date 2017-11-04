@@ -1,19 +1,21 @@
 
 {# Not sure if this is the best way to get containing page entry #}
 {% set homepage = craft.entries.section('homepage').first() %}
-<div class="services-entry col-xs-12 col-sm-4">
-    <h2 class="title-text">
-        <div class="services-small-title-text">
-            {{entry.smallTitleText|raw}}
+<div class="services-entry-wrapper col-xs-12 col-sm-4">
+    <div class="services-entry">
+        <h2 class="title-text">
+            <div class="services-small-title-text">
+                {{entry.smallTitleText|raw}}
+            </div>
+            <div class="services-large-title-text">
+                {{entry.largeTitleText}}
+            </div>
+        </h2>
+        <div class="services-blurb-text">
+            {{ entry.blurbText }}
         </div>
-        <div class="services-large-title-text">
-            {{entry.largeTitleText}}
-        </div>
-    </h2>
-    <div class="services-blurb-text">
-        {{ entry.blurbText }}
+        <a class="services-link" href="{{entry.url}}">
+            {{ homepage.homepageServicesLinkText }}
+        </a>
     </div>
-    <a class="services-link" href="{{entry.url}}">
-        {{ homepage.homepageServicesLinkText }}
-    </a>
 </div>

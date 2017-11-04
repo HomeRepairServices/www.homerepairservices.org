@@ -14,6 +14,10 @@
             }
         }
 
+        .services-entry-wrapper {
+            margin-bottom: 1rem;
+        }
+
         .services-entry {
             background-color:  $light-gray;
             padding: 1.5rem;
@@ -34,12 +38,11 @@
         }
 
         .services-blurb-text {
-
+            margin-bottom: 1rem;
         }
 
         .services-link {
             @extend .link-button;
-            margin-top: 1rem;
             background-color: $red;
             color: $white;
             text-transform: uppercase;
