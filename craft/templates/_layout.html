@@ -15,31 +15,55 @@
 	<meta charset="utf-8" />
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
   {% includeCssFile "/assets/css/base.css" %}
 </head>
 
 <body>
-	<div id="container">
-		<header id="header">
-			<h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1>
+	<div id="content">
+		<nav>
+      <a href="{{ siteUrl }}"><img src="logo" class="logo" /></a>
+      <ul class="nav-links">
+				<li><a href="{{ url('homepage') }}" {% if craft.request.firstSegment == 'homepage' %}class="active"{% endif %}>Home</a></li>
+				<li><a href="{{ url('aboutUs') }}" {% if craft.request.firstSegment == 'aboutUs' %}class="active"{% endif %}>About Us</a></li>
+        <li><a href="{{ url('donate') }}" class="button {% if craft.request.firstSegment == 'donate' %} active{% endif %}">Donate</a></li>
+			</ul>
 
-			<nav>
-				<ul>
-					<li><a href="{{ url('news') }}" {% if craft.request.firstSegment == 'news' %}class="active"{% endif %}>News</a></li>
-				</ul>
-			</nav>
-		</header>
+    </nav>
 
-		<main id="content" role="main">
-			{% block content %}
-				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-			{% endblock %}
+
+		<main>
+			{% block content %}	{% endblock %}
 		</main>
 
-		<footer id="footer">
-		  Contact us, or something
+    <div class="volunteering-banner">
+      <h2>Volunteering</h2>
+      <div class="volunteering-block-container">
+        <div class="volunteering-block">
+          <h3>Have a Skill?</h3>
+          <div>sdkjf sldkj as;dkfj sadlfj eofinaslkefj wlkjfnihfo ajd</div>
+        </div>
+        <div class="volunteering-block">
+          <h3>Utterly Skillless?</h3>
+          <div>sdkjf sldkj as;dkfj sadlfj eofinaslkefj wlkjfnihfo ajd</div>
+        </div>
+      </div>
+    </div>
+
+		<footer>
+      <div class="mission">
+        This is the mission it is very cool we do good stuff for folks.
+      </div>
+		  <div class="contact-us">
+        <h2>Contact</h2>
+        <ul>
+          <li><i class="logo"></i> 204 Address </li>
+          <li><i class="logo"></i> 302-222-3344 </li>
+          <li><i class="logo"></i><a href="mailto:email@theplace.com">email@theplace.com</a></li>
+        </ul>
+      </div>
+      <div class="legal"></div>
 		</footer>
 	</div>
 </body>
