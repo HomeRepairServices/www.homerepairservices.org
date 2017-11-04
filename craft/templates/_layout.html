@@ -64,9 +64,15 @@
 		  <div class="contact-us">
         <h2>Contact</h2>
         <ul>
-          <li><i class="logo"></i>{{ footer.address }}</li>
-          <li><i class="logo"></i>{{ footer.telephoneNumber }}</li>
-          <li><i class="logo"></i><a href="mailto:{{footer.email}}">{{ footer.email }}</a></li>
+          <li>
+            <i class="icon icon-address fa fa-map-marker" aria-hidden="true"></i><span class="contact-value">{{footer.address }}</span>
+          </li>
+          <li>
+            <i class="icon fa fa-phone" aria-hidden="true"></i><span class="contact-value">{{ footer.telephoneNumber }}</span>
+            </li>
+          <li>
+            <i class="icon fa fa-envelope" aria-hidden="true"></i><span class="contact-value"><a href="mailto:{{footer.email}}">{{ footer.email }}</a></span>
+          </li>
         </ul>
       </div>
       <div class="legal"></div>
