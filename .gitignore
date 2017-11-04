@@ -1,4 +1,6 @@
+node_modules
 public/assets/css
+public/assets/bower_components
 .sass-cache
 vendor
 .vscode/launch.json
