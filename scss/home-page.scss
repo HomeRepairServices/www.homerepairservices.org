@@ -1,0 +1,60 @@
+@import './common';
+
+#home-page {
+
+    #home-page-get-involved {
+
+        .section-header {
+            font-weight: normal;
+            text-align: center;
+            text-transform: uppercase;
+
+            .involved {
+                font-weight: bold;
+            }
+        }
+
+        .services-entry {
+            @extend .flex-col;
+            @extend .flex-4;
+            background-color:  $light-gray;
+            margin-right: 2rem;
+            padding: 1.5rem;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        .title-text {
+            text-transform: uppercase;
+            color: $blue;
+            margin: 0;
+        }
+
+        .services-small-title-text {
+            font-size: 1.5rem;
+        }
+
+        .services-large-title-text {
+            font-size: 3.2rem;
+        }
+
+        .services-blurb-text {
+            height: 6rem;
+            overflow: hidden;
+        }
+
+        .services-link {
+            @extend .link-button;
+            background-color: $red;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+
+            &:focus, &:hover{
+                background-color: darken($red, 10%);
+            }
+        }
+    }
+}
