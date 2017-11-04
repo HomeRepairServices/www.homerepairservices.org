@@ -2,3 +2,4 @@ public/assets/css
 .sass-cache
 vendor
 .vscode/launch.json
+*.orig
