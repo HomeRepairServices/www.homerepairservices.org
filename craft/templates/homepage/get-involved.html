@@ -1,8 +1,8 @@
 <div id="home-page-get-involved">
     <h1 class="section-header">
-        Get <span class="involved">Involved</span>
+        {{ entry.servicesTitleText }}
     </h1>
-    <div class="flex-row">
+    <div class="row">
     {% for entry in craft.entries.section('homepageServices').limit(3).find() %}
         {% include 'homepage/_get-involved-item' %}
     {% endfor %}

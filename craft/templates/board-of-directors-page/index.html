@@ -1,0 +1,17 @@
+{% extends "_layout" %}
+{% includeCssFile "/assets/css/board-of-directors.css" %}
+{% block content %}
+<div id="board-of-directors-page">
+	  {% include 'hero' %}
+    <div class="page-body">
+        {{ entry.body }}
+    </div>
+    <div class="board-member-list">
+        <div class="row">
+            {% for entry in craft.entries.section('boardOfDirectors').find() %}
+                {% include 'board-of-directors-page/_member-item' %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

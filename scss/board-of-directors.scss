@@ -1,0 +1,23 @@
+@import './common';
+
+#board-of-directors-page {
+    .board-member-list{
+        padding: 2rem;
+    }
+
+    .board-member {
+        margin-bottom: 2rem;
+
+        p {
+            margin: 0;
+        }
+
+        .name {
+            font-weight: bold;
+        }
+
+        .occupation{
+
+        }
+    }
+}

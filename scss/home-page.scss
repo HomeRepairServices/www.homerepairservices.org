@@ -14,16 +14,13 @@
             }
         }
 
-        .services-entry {
-            @extend .flex-col;
-            @extend .flex-4;
-            background-color:  $light-gray;
-            margin-right: 2rem;
-            padding: 1.5rem;
+        .services-entry-wrapper {
+            margin-bottom: 1rem;
+        }
 
-            &:last-child {
-                margin-right: 0;
-            }
+        .services-entry {
+            background-color:  $light-gray;
+            padding: 1.5rem;
         }
 
         .title-text {
@@ -41,14 +38,13 @@
         }
 
         .services-blurb-text {
-            height: 6rem;
-            overflow: hidden;
+            margin-bottom: 1rem;
         }
 
         .services-link {
             @extend .link-button;
             background-color: $red;
-            color: white;
+            color: $white;
             text-transform: uppercase;
             font-weight: bold;
 
@@ -56,5 +52,18 @@
                 background-color: darken($red, 10%);
             }
         }
+    }
+
+    iframe {
+      // Prevent gap at bottom of instagram
+      display:block;
+    }
+
+    .financial-coaching {
+      height: 200px;
+      background-color: $green;
+      color: $white;
+      padding: $spacing;
+      margin-top: $spacing;
     }
 }

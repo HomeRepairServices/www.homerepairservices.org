@@ -16,6 +16,12 @@
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/bower_components/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="/assets/bower_components/rangeslider.js/dist/rangeslider.css" />
+        <script src="/assets/bower_components/knockout/dist/knockout.js"></script>
+        <script src="/assets/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/assets/bower_components/rangeslider.js/dist/rangeslider.min.js"></script>
+        <script src="/assets/main.js"></script>
 
   {% includeCssFile "/assets/css/base.css" %}
 </head>
@@ -25,7 +31,7 @@
 		<nav>
       <a href="{{ siteUrl }}"><img src="logo" class="logo" /></a>
       <ul class="nav-links">
-				<li><a href="{{ url('homepage') }}" {% if craft.request.firstSegment == 'homepage' %}class="active"{% endif %}>Home</a></li>
+				<li><a href="{{ siteUrl }}" {% if craft.request.firstSegment == 'homepage' %}class="active"{% endif %}>Home</a></li>
 				<li><a href="{{ url('aboutUs') }}" {% if craft.request.firstSegment == 'aboutUs' %}class="active"{% endif %}>About Us</a></li>
         <li><a href="{{ url('donate') }}" class="button {% if craft.request.firstSegment == 'donate' %} active{% endif %}">Donate</a></li>
 			</ul>
@@ -58,9 +64,15 @@
 		  <div class="contact-us">
         <h2>Contact</h2>
         <ul>
-          <li><i class="logo"></i>{{ footer.address }}</li>
-          <li><i class="logo"></i>{{ footer.telephoneNumber }}</li>
-          <li><i class="logo"></i><a href="mailto:{{footer.email}}">{{ footer.email }}</a></li>
+          <li>
+            <i class="icon icon-address fa fa-map-marker" aria-hidden="true"></i><span class="contact-value">{{footer.address }}</span>
+          </li>
+          <li>
+            <i class="icon fa fa-phone" aria-hidden="true"></i><span class="contact-value">{{ footer.telephoneNumber }}</span>
+            </li>
+          <li>
+            <i class="icon fa fa-envelope" aria-hidden="true"></i><span class="contact-value"><a href="mailto:{{footer.email}}">{{ footer.email }}</a></span>
+          </li>
         </ul>
       </div>
       <div class="legal"></div>

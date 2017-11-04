@@ -5,6 +5,7 @@ body {
   font-family: sans-serif;
   background: #fff;
   font-family: 'Raleway', sans-serif;
+  font-size: 18px;
   color: $font;
 }
 
@@ -55,6 +56,7 @@ nav {
 main {
 
 }
+
 
 
 .volunteering-banner {
@@ -109,6 +111,21 @@ footer {
       padding: 0;
       li {
         list-style: none;
+        color: $font-light;
+        padding: 5px;
+        .icon {
+          width: 25px;
+          display: table-cell;
+          vertical-align: top;
+          margin-right: 10px;
+          padding-top: 3px;
+        }
+        .contact-value{
+          display: table-cell;
+          vertical-align: top;
+          white-space: pre;
+        }
+
       }
     }
     h2 {
