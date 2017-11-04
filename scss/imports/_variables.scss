@@ -1,6 +1,7 @@
 // Breakpoints
 $medium-screen: 600px;
 $large-screen: 900px;
+$max-width: 1280px;
 
 // Typography
 $body-font-family: 'Lato', sans-serif;
@@ -15,35 +16,25 @@ $heading-line-height: 1.2;
 
 // Other Sizes
 $border-radius: 3px;
-$spacing: 8px;
+$spacing: 20px;
 $small-spacing: $spacing / 2;
 
 // Colors
 $font: #333;
 $font-light: #666;
-$orange: #FF9000;
-$yellow: #FFC200;
-$yellow-hover: shade($yellow, 10%);
-$green: #AFBF1D;
-$green-hover: shade($green, 10%);
-$red: #A61A00;
-$red-hover: shade($red, 10%);
-$dark-gray: lighten($black, 15%);
-$medium-gray: lighten($black, 30%);
-$medium-gray-hover: lighten($black, 17%);
-$light-gray: #eeeae6;
+$blue: #25418F;
+$red: #f17254;
+$green: #5bb664;
+$action-color: $blue;
+$white: #fff;
 
-// Font Colors
-$base-font-color: $dark-gray;
-$action-color: $orange;
 
 // Border
-$base-border-color: $light-gray;
+$base-border-color: #ddd;
 $base-border: 1px solid $base-border-color;
 
 // Background Colors
-$base-background-color: $light-gray;
-$secondary-background-color: tint($base-border-color, 75%);
+$base-background-color: #fff;
 
 $base-box-shadow: 1px 1px 1px -1px rgba(0,0,0,.14), 1px 2px 1px -1px rgba(0,0,0,.12);
 
