@@ -1,14 +1,6 @@
 @import './common';
 
 #board-of-directors-page {
-    h1 {
-        @extend .page-title;
-    }
-
-    h2 {
-      color: $blue;  
-    }
-
     .board-member-list{
         padding: 2rem;
     }

@@ -53,4 +53,17 @@
             }
         }
     }
+
+    iframe {
+      // Prevent gap at bottom of instagram
+      display:block;
+    }
+
+    .financial-coaching {
+      height: 200px;
+      background-color: $green;
+      color: $white;
+      padding: $spacing;
+      margin-top: $spacing;
+    }
 }
