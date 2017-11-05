@@ -10,18 +10,19 @@
  #}
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ craft.locale|replace('_','-') }}">
 <head>
-	<meta charset="utf-8" />
-	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
-	<link rel="home" href="{{ siteUrl }}" />
+  <meta charset="utf-8" />
+  <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <link rel="home" href="{{ siteUrl }}" />
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/bower_components/font-awesome/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="/assets/bower_components/rangeslider.js/dist/rangeslider.css" />
-        <script src="/assets/bower_components/knockout/dist/knockout.js"></script>
-        <script src="/assets/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="/assets/bower_components/rangeslider.js/dist/rangeslider.min.js"></script>
-        <script src="/assets/main.js"></script>
+  <link rel="stylesheet" href="/assets/bower_components/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/assets/bower_components/rangeslider.js/dist/rangeslider.css" />
+  <script src="/assets/bower_components/knockout/dist/knockout.js"></script>
+  <script src="/assets/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/bower_components/rangeslider.js/dist/rangeslider.min.js"></script>
+  <script src="/assets/main.js"></script>
 
   {% includeCssFile "/assets/css/base.css" %}
 </head>
@@ -32,7 +33,7 @@
       <a href="{{ siteUrl }}"><img src="logo" class="logo" /></a>
       <ul class="nav-links">
 				<li><a href="{{ siteUrl }}" {% if craft.request.firstSegment == 'homepage' %}class="active"{% endif %}>Home</a></li>
-				<li><a href="{{ url('aboutUs') }}" {% if craft.request.firstSegment == 'aboutUs' %}class="active"{% endif %}>About Us</a></li>
+				<li><a href="{{ url('about-us') }}" {% if craft.request.firstSegment == 'aboutUs' %}class="active"{% endif %}>About Us</a></li>
         <li><a href="{{ url('donate') }}" class="button {% if craft.request.firstSegment == 'donate' %} active{% endif %}">Donate</a></li>
 			</ul>
 
