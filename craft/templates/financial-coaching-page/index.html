@@ -11,7 +11,7 @@
     <div class="section-description">
         {{entry.financialCoachingDescription}}
     </div>
-  </div>  
+  </div>
 
   <div class="income-section">
     <h2 class="section-title">
@@ -20,7 +20,7 @@
     <div class="section-description">
         {{entry.incomeDescription}}
     </div>
-  </div>  
+  </div>
 
   <div class="support-section">
     <h2 class="section-title">
@@ -29,9 +29,9 @@
     <div class="section-description">
       {{entry.supportDescription}}
     </div>
-  </div>  
+  </div>
 
-  
+
   <div class="money-matters-banner">
     <img class="money-matters-logo"
       src="#" width="200px" height="200px" />
@@ -43,7 +43,7 @@
 
    <div class="downloads-list">
      {% for download in entry.fileDownload %}
-     <a class="download" target="_blank">
+     <a class="download" target="_blank"  href="{{download.file.first().url}}">
        <i class="fa fa-download fa-3x icon"></i>
        <h3>{{ download.smallTitle }}
          <span>{{ download.bigTitle }}</span></h3>
