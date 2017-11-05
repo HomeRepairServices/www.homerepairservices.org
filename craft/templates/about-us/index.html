@@ -3,32 +3,51 @@
 {% block content %}
 {% include 'hero' %}
 <div id="about-us-page">
-    
-<div class=mission-section>
-    <h2 class="section-title">
-        {{entry.missionTitle}}
-    </h2>
-    <div class="section-description">
-        {{entry.missionDescription}}
-    </div>  
-</div>
-    
-<div class="values-section">
-    <h2 class="section-title">
-        {{entry.valuesTitle}}
-    </h2>
-    <div class="section-description">
-        {{entry.valuesDescription}}
-    </div>
-</div>
 
-<div class="vision-section">
+  <div class=mission-section>
     <h2 class="section-title">
-        {{entry.visionTitle}}
+      {{entry.missionTitle}}
     </h2>
     <div class="section-description">
-        {{entry.visionDescription}}
+      {{entry.missionDescription}}
     </div>
-</div>
+  </div>
+
+  <div class="values-section">
+    <h2 class="section-title">
+      {{entry.valuesTitle}}
+    </h2>
+    <div class="section-description">
+      {{entry.valuesDescription}}
+    </div>
+  </div>
+
+  <div class="vision-section">
+    <h2 class="section-title">
+      {{entry.visionTitle}}
+    </h2>
+    <div class="section-description">
+      {{entry.visionDescription}}
+    </div>
+  </div>
+
+   <div class="staff-list">
+     {% for link in entry.staffLink %}
+     <a class="staff-link" href="{{ url(link.linkSlug) }}" style="background-image: url({{link.backgroundImage.first().url}})">
+       <h3>{{ link.smallTitle }}
+         <span>{{ link.bigTitle }}</span></h3>
+     </a>
+     {% endfor %}
+   </div>
+
+   <div class="downloads-list">
+     {% for download in entry.fileDownload %}
+     <a class="download" target="_blank" href="{{download.file.first().url}}">
+       <i class="fa fa-download fa-3x icon"></i>
+       <h3>{{ download.smallTitle }}
+         <span>{{ download.bigTitle }}</span></h3>
+     </a>
+     {% endfor %}
+   </div>
 </div>
 {% endblock %}

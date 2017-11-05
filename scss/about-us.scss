@@ -36,6 +36,35 @@
         padding-left: 35px;
     }
 
+    .staff-list {
+      margin: $spacing*2 (-$spacing/2);
+      display: flex;
+      .staff-link {
+        display: block;
+        cursor: pointer;
+        text-decoration: none;
+        flex: 1;
+        display: block;
+        background-color: $blue;
+        min-width: 325px;
+        padding: $spacing * 2;
+        margin: $spacing/2;
+
+        &:hover {
+          background-color: darken($blue, 10%);
+        }
+
+        h3 {
+          margin: 0;
+          color: $white;
+          text-transform: uppercase;
+          span {
+            display: block;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
 
   .downloads-list {
     margin: $spacing*2 (-$spacing/2);
