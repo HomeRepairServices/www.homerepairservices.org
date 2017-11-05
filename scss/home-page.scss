@@ -64,9 +64,9 @@
         }
 
         .services-link {
+            @extend .link-button;
             position: absolute;
             bottom: $spacing * 2;
-            @extend .link-button;
             background-color: $red;
             color: $white;
             text-transform: uppercase;
