@@ -1,28 +1,43 @@
 {% extends "_layout" %}
 {% includeCssFile "/assets/css/financial-coaching.css" %}
 {% block content %}
-<div id="financial-coaching-page">
-    {% include 'hero' %}
+{% include 'hero' %}
 
+<div id="financial-coaching-page">
     <h2 class="section-title">
         {{entry.financialCoachingTitle}}
     </h2>
     <div class="section-description">
         {{entry.financialCoachingDescription}}
     </div>
-    
+
     <h2 class="section-title">
         {{entry.incomeTitle}}
     </h2>
     <div class="section-description">
         {{entry.incomeDescription}}
     </div>
-    
+
     <h2 class="section-title">
-        {{entry.supportTitle}}
+      {{entry.supportTitle}}
     </h2>
     <div class="section-description">
-        {{entry.supportDescription}}
+      {{entry.supportDescription}}
     </div>
+
+   <div class="money-matters-banner">
+     <h3>{{entry.bannerTitle}}</h3>
+     <div>{{entry.bannerBlurb}}</div>
+   </div>
+
+   <div class="downloads-list">
+     {% for download in entry.fileDownload %}
+     <a class="download" target="_blank">
+       <i class="fa fa-download fa-3x icon"></i>
+       <h3>{{ download.smallTitle }}
+         <span>{{ download.bigTitle }}</span></h3>
+     </a>
+     {% endfor %}
+   </div>
 </div>
 {% endblock %}

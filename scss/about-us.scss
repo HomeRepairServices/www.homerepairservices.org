@@ -1,7 +1,38 @@
 @import './common';
 
+
+
 #about-us-page {
-    h1 {
+    h1{
         @extend .page-title;
-    } 
+    }
+      
+    .section-description {
+        color: $font;
+    }
+    
+    h2{
+        color: $blue;
+        text-transform: uppercase;
+        margin: 0;
+        margin-top: 1rem;
+    }
+    
+    .mission-section{
+        padding: $spacing;
+        padding-left: 35px;
+
+    }
+
+    .values-section{
+        background-color: $lighter-gray;
+        padding: $spacing;
+        padding-left: 35px;
+    }
+
+    .vision-section{
+        background-color: $light-gray;
+        padding: $spacing;
+        padding-left: 35px;
+    }
 }

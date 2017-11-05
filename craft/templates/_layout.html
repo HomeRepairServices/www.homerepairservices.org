@@ -31,9 +31,9 @@
         {% set navigation = navigation.navigation.first() %}
         <li class="home"><a href="{{ siteUrl }}" {% if craft.request.firstSegment == '' %}class="active"{% endif %}>Home</a></li>
         {% if navigation.language == "English" %}
-        <li><a href="/{{ entry.slug }}">{{ navigation.language }}</a></li>
+        <li><a href="/{{ entry.uri }}">{{ navigation.language }}</a></li>
         {% else %}
-				<li><a href="/es/{{ entry.slug }}">{{ navigation.language }}</a></li>
+				<li><a href="/es/{{ entry.uri }}">{{ navigation.language }}</a></li>
         {% endif %}
 				<li><a href="{{ url('homeowner-services') }}" {% if craft.request.firstSegment == 'homeowner-services' %}class="active"{% endif %}>{{ navigation.services }}</a></li>
 				<li><a href="{{ url('about-us') }}" {% if craft.request.firstSegment == 'aboutUs' %}class="active"{% endif %}>{{ navigation.aboutUs }}</a></li>
