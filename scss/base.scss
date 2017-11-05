@@ -79,9 +79,15 @@ nav {
     }
   }
 
-  @media(max-width: 800px) {
+  @media(max-width: 870px) {
+    .logo {
+      display: none;
+    }
     ul li {
       padding: 40px 10px;
+      &.home {
+        display: inline-block;
+      }
     }
   }
 
@@ -99,9 +105,6 @@ nav {
         display: block;
         border-bottom: 1px solid #ddd;
         padding: 0;
-        &.home {
-          display: block;
-        }
         a {
           line-height: 1;
           display: block;
@@ -218,7 +221,20 @@ footer {
   color: $light-gray;
   padding: 0 3px;
 
+  @media(max-width: 640px) {
+    line-height: 1;
+    padding: 10px;
+  }
+
   &.active {
+    color: $font;
+  }
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  &:hover {
     color: $font;
   }
 }
