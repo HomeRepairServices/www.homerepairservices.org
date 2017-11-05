@@ -201,3 +201,14 @@ footer {
     margin-bottom: $spacing;
   }
 }
+
+.language-toggle {
+  display: inline-block;
+  color: $light-gray;
+  padding-right: 3px;
+  padding-left: 3px;
+
+  &.active {
+    color: $font;
+  }
+}
