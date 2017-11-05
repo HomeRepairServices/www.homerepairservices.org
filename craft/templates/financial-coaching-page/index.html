@@ -3,8 +3,26 @@
 {% block content %}
 <div id="financial-coaching-page">
     {% include 'hero' %}
-    <h1>
-        {{ entry.pageTitle }}
-    </h1>
+
+    <h2 class="section-title">
+        {{entry.financialCoachingTitle}}
+    </h2>
+    <div class="section-description">
+        {{entry.financialCoachingDescription}}
+    </div>
+    
+    <h2 class="section-title">
+        {{entry.incomeTitle}}
+    </h2>
+    <div class="section-description">
+        {{entry.incomeDescription}}
+    </div>
+    
+    <h2 class="section-title">
+        {{entry.supportTitle}}
+    </h2>
+    <div class="section-description">
+        {{entry.supportDescription}}
+    </div>
 </div>
 {% endblock %}

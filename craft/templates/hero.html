@@ -1,12 +1,12 @@
 <div id="hero">
   {% includeCssFile "/assets/css/hero.css" %}
-  {% set image = entry.hero.first() %}
+  {% set image = entry.hero.first() ?? entry.heroImage.first() %}
   {% if image %}
-  <img src="{{ image.getUrl('heroImage') }}" class="hero" />
+    <img src="{{ image.getUrl('heroImage') }}" class="hero" />
   {% endif %}
   <div class="hero-title">
     <div class="hero-blurb"></div>
-    <h3>{{ entry.smallTitleText }}</h3>
-    <h2>{{ entry.largeTitleText }}</h2>
+    <h3>{{ entry.smallTitleText ?? entry.heroTitleSmall }}</h3>
+    <h2>{{ entry.largeTitleText ?? entry.heroTitleLarge }}</h2>
   </div>
 </div>
