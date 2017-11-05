@@ -31,6 +31,7 @@
         }
 
         .center-service {
+          flex-grow: 2;
           .services-entry {
             min-height: 300px;
             background-color: $green;
@@ -41,6 +42,10 @@
             .services-link {
               border: 2px solid lighten($red, 10%);
             }
+          }
+
+          @media (max-width: 600px) {
+            order: 0;
           }
         }
 
@@ -53,10 +58,31 @@
 
         .services-small-title-text {
             font-size: 1.5rem;
+            @media(max-width: 1000px) {
+              font-size: 1.25rem;
+            }
+            @media(max-width: 875px) {
+              font-size: 1rem;
+            }
+            @media(max-width: 750px) {
+              font-size: 1.5rem;
+            }
         }
 
         .services-large-title-text {
-            font-size: 3.2rem;
+            font-size: 3rem;
+            @media(max-width: 1180px) {
+              font-size: 2.5rem;
+            }
+            @media(max-width: 1000px) {
+              font-size: 2rem;
+            }
+            @media(max-width: 875px) {
+              font-size: 1.8rem;
+            }
+            @media(max-width: 750px) {
+              font-size: 3rem;
+            }
         }
 
         .services-blurb-text {

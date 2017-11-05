@@ -14,7 +14,8 @@
 <head>
   <meta charset="utf-8" />
   <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="home" href="{{ siteUrl }}" />
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
   <link rel="stylesheet" href="/assets/bower_components/font-awesome/css/font-awesome.min.css" />
@@ -30,13 +31,19 @@
 <body>
 	<div id="content">
 		<nav>
-      <a href="{{ siteUrl }}"><img src="logo" class="logo" /></a>
+      <a href="{{ siteUrl }}"><img class="logo" src="{{ navigation.logo.first().url }}"/></a>
       <ul class="nav-links">
-				<li><a href="{{ siteUrl }}" {% if craft.request.firstSegment == 'homepage' %}class="active"{% endif %}>Home</a></li>
-				<li><a href="{{ url('about-us') }}" {% if craft.request.firstSegment == 'aboutUs' %}class="active"{% endif %}>About Us</a></li>
-        <li><a href="{{ url('donate') }}" class="button {% if craft.request.firstSegment == 'donate' %} active{% endif %}">Donate</a></li>
+        {% set navigation = navigation.navigation.first() %}
+        <li class="home"><a href="{{ siteUrl }}" {% if craft.request.firstSegment == '' %}class="active"{% endif %}>Home</a></li>
+        {% if navigation.language == "English" %}
+        <li><a href="/{{ entry.slug }}">{{ navigation.language }}</a></li>
+        {% else %}
+				<li><a href="/es/{{ entry.slug }}">{{ navigation.language }}</a></li>
+        {% endif %}
+				<li><a href="{{ url('homeowner-services') }}" {% if craft.request.firstSegment == 'homeowner-services' %}class="active"{% endif %}>{{ navigation.services }}</a></li>
+				<li><a href="{{ url('about-us') }}" {% if craft.request.firstSegment == 'aboutUs' %}class="active"{% endif %}>{{ navigation.aboutUs }}</a></li>
+        <li><a href="{{ url('donate') }}" class="button {% if craft.request.firstSegment == 'donate' %} active{% endif %}">{{ navigation.donate }}</a></li>
 			</ul>
-
     </nav>
 
 
@@ -60,7 +67,7 @@
 
 		<footer>
       <div class="mission">
-        This is the mission it is very cool we do good stuff for folks.
+        {{ footer.mission }}
       </div>
 		  <div class="contact-us">
         <h2>Contact</h2>
