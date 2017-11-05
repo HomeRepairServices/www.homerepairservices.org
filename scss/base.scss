@@ -22,6 +22,9 @@ nav {
   .logo {
     height: 60px;
     margin: 10px 0;
+    @media(max-width: 1280px) {
+      margin-left: 10px;
+    }
   }
   ul {
     float: right;
@@ -41,6 +44,13 @@ nav {
         display: none;
       }
 
+      &:last-of-type {
+        padding-right: 0;
+      }
+
+      .fa {
+        line-height: 0;
+      }
       a {
         color: $font;
         text-decoration: none;
@@ -204,9 +214,9 @@ footer {
 
 .language-toggle {
   display: inline-block;
+  line-height: 0;
   color: $light-gray;
-  padding-right: 3px;
-  padding-left: 3px;
+  padding: 0 3px;
 
   &.active {
     color: $font;

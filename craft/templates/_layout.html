@@ -38,7 +38,7 @@
         <li><a href="{{ url('donate') }}" class="button {% if craft.request.firstSegment == 'donate' %} active{% endif %}">{{ navigation.donate }}</a></li>
         <li>
             <i class="fa fa-globe" aria-hidden="true" title="Language/Idioma"></i>
-            <a href="/{{ entry.uri }}" title="Enlgish" class="language-toggle {% if navigation.language != "English" %} {{"active"}} {% endif %}">EN</a>|<a href="/es/{{ entry.uri }}" title="Espa&ntilde;ol" class="language-toggle {% if navigation.language == "English" %} {{"active"}} {% endif %}">ES</a>
+            <a href="/{{ entry.uri }}" title="English" class="language-toggle {% if navigation.language != "English" %} {{"active"}} {% endif %}">EN</a>|<a href="/es/{{ entry.uri }}" title="Espa&ntilde;ol" class="language-toggle {% if navigation.language == "English" %} {{"active"}} {% endif %}">ES</a>
         </li>
 			</ul>
     </nav>
@@ -83,8 +83,18 @@
       <div class="legal"></div>
 		</footer>
   </div>
-  
+
   <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.2.1,npm/knockout@3.4.2/build/output/knockout-latest.min.js,npm/rangeslider.js@2.3.1"></script>
   <script src="/assets/main.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108874823-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-108874823-1');
+  </script>
 </body>
 </html>
