@@ -1,0 +1,41 @@
+@import 'variables';
+
+/*
+    <label class="form-check-label">
+        <input class="form-check-input" name="Sample" type="checkbox" value="true" checked="checked" />
+        <span class="ck"></span>
+        Sample
+    </label>
+*/
+
+.form-check-input {
+    display: none;
+}
+
+.form-check-input + .ck:before, .form-check-input + input[type="hidden"] + .ck:before {
+    text-shadow: -1px -1px 0 $red, 1px -1px 0 $red, -1px 1px 0 $red, 1px 1px 0 $red;
+    color: $white;
+    margin-right: 10px;
+    content: "\f0c8";
+    font-family: FontAwesome;
+    display: inline-block;
+    font-size: 2rem;
+}
+
+.form-check-input.form-check-input-lg + .ck:before, .form-check-input.form-check-input-lg + input[type="hidden"] + .ck:before {
+    font-size: 3rem;
+}
+
+[type="radio"].form-check-input + .ck:before, [type="radio"].form-check-input + input[type="hidden"] + .ck:before {
+    content: "\f111";
+}
+
+.form-check-input:checked + .ck:before, .form-check-input:checked + input[type="hidden"] + .ck:before {
+    text-shadow: none;
+    color: $red;
+    content: "\f14a";
+}
+
+[type="radio"].form-check-input:checked + .ck:before, [type="radio"].form-check-input:checked + input[type="hidden"] + .ck:before {
+    content: "\f058";
+}

@@ -18,13 +18,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="home" href="{{ siteUrl }}" />
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/bower_components/font-awesome/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="/assets/bower_components/rangeslider.js/dist/rangeslider.css" />
-  <script src="/assets/bower_components/knockout/dist/knockout.js"></script>
-  <script src="/assets/bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="/assets/bower_components/rangeslider.js/dist/rangeslider.min.js"></script>
-  <script src="/assets/main.js"></script>
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/rangeslider.js@2.3.1/dist/rangeslider.css" integrity="sha256-jJApoDvazb6sRGbc3gE+wdEAE0cE0H1Ag3k1qCada9c=" crossorigin="anonymous">
   {% includeCssFile "/assets/css/base.css" %}
 </head>
 
@@ -85,6 +80,9 @@
       </div>
       <div class="legal"></div>
 		</footer>
-	</div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.2.1,npm/knockout@3.4.2/build/output/knockout-latest.min.js,npm/rangeslider.js@2.3.1"></script>
+  <script src="/assets/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+@import './common';
+
+#homeowner-services-page {
+    h1 {
+        @extend .page-title;
+    }
+
+    h2 {
+        color: $blue;
+        text-align: center;
+        font-weight: normal;
+
+        strong {
+            font-weight: bold;
+        }
+    }
+
+    .instruction-text {
+        text-align: center;
+    }
+
+    .service-block {
+        background-color: $light-gray;
+    }
+}
