@@ -1,0 +1,48 @@
+{% extends "_layout" %}
+{% includeCssFile "/assets/css/donate-page.css" %}
+{% block content %}
+{% include 'hero' %}
+
+<div id="donate-page">
+<h2>Make a <span>Donation</span></h2>
+<div class="block">
+  {% for block in entry.donationActions.limit(3) %}
+  <div class="action">
+    {% if block.type == "donationAction" %}
+    <h3 class="small">{{ block.smallTitle }}</h3>
+    <h3 class="large">{{ block.bigTitle }}</h3>
+    <a href="{{block.buttonLink}}">{{ block.buttonText }}</a>
+
+    {% elseif block.type == "text" %}
+    <div class="blurb">{{ block.blurb }}</div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+<h2>Offer <span>Support</span></h2>
+<div class="block">
+  {% for block in entry.donationActions.offset(3).limit(3) %}
+  <div class="action">
+    {% if block.type == "donationAction" %}
+    <h3 class="small">{{ block.smallTitle }}</h3>
+    <h3 class="large">{{ block.bigTitle }}</h3>
+    <a href="{{block.buttonLink}}">{{ block.buttonText }}</a>
+
+    {% elseif block.type == "text" %}
+    {{ block.blurb }}
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+<h2>Key <span>Partners</span></h2>
+<div class="block">
+  {% for block in entry.partners %}
+  <div class="partner">
+    <a href="{{ block.partnerName }}">{{ block.partnerName }}</a>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

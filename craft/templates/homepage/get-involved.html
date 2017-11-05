@@ -4,7 +4,7 @@
     </h1>
     <div class="row">
     {% for serviceBlock in entry.serviceBlock %}
-    <div class="services-entry-wrapper col-xs-12 col-sm-4 {{ (serviceBlock == 'free-open-services' ? 'center-service' : '') }}">
+    <div class="services-entry-wrapper col-xs-12 col-sm-4 {{ (serviceBlock.learnMoreLink == 'financial-coaching' ? 'center-service' : '') }}">
         <div class="services-entry">
             <h2 class="title-text">
                 <div class="services-small-title-text">

@@ -1,5 +1,82 @@
 @import './common';
 
 #donate-page {
+  h2 {
+    @extend .page-title;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: $spacing 0;
+    span {
+      font-weight: bold;
+    }
+  }
 
+  .block {
+    background-color: $light-gray;
+    padding: $spacing;
+    margin: $spacing*2 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .action {
+      flex-shrink: 1;
+      padding: $spacing;
+
+      .small {
+        color: $blue;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      .large {
+        color: $blue;
+        font-weight: bold;
+        font-size: 3rem;
+        text-transform: uppercase;
+        margin: 0;
+        margin-bottom: $spacing;
+      }
+
+      a {
+        @extend .link-button;
+        background-color: $red;
+        color: $white;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: inline-block;
+
+        &:focus, &:hover{
+          background-color: darken($red, 10%);
+        }
+      }
+
+      .blurb {
+        width: 325px;
+        font-size: 2rem;
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .partner {
+      flex: 1;
+      padding: $spacing * 2;
+      text-align: center;
+      align-self: center;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 20px;
+        color: $font;
+        &:hover {
+          color: $blue;
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }
