@@ -11,11 +11,13 @@
     <div class="service-block general-service">
         {% set icon = block.icon.first() %} 
         {% if icon %}
-            <img src="{{ icon.getUrl() }}" class="service-icon" /> 
+            <img src="{{ icon.getUrl('icon') }}" class="service-icon" /> 
         {% endif %}
-        <div class="small-text">{{ block.smallTitleText }}</div>
-        <div class="large-text">{{ block.largeTitleText }}</div>
-        <div>
+        <h3>
+            <span class="small-text">{{ block.smallTitleText }}</span>
+            <span class="large-text">{{ block.largeTitleText }}</span>
+        </h3>
+        <div class="blurb-text">
             {{ block.blurbText }}
         </div>
     </div>
@@ -35,14 +37,14 @@
                 <label class="form-check-label">
                     <input class="form-check-input" name="own-home" id="own-home" type="checkbox" value="true" />
                     <span class="ck"></span>
-                    {{widget.iOwnMyOwnHomeLabel}}
+                    <span class="label-text">{{widget.iOwnMyOwnHomeLabel}}</span>
                 </label>
             </div>
             <div class="col-xs-12 col-sm-6">
                 <label class="form-check-label">
                     <input class="form-check-input" name="over-sixty" id="over-sixty" type="checkbox" value="true" />
                     <span class="ck"></span>
-                    {{widget.imOver60Label}}
+                    <span class="label-text">{{widget.imOver60Label}}</span>
                 </label>
             </div>
         </div>
@@ -56,11 +58,13 @@
     <div id="{{block.serviceName|replace({' ': '-'})}}" class="service-block income-limited-service" data-uses-age-based-criteria="{{block.usesAgeBasedCriteria}}">
         {% set icon = block.icon.first() %}
         {% if icon %}
-            <img src="{{ icon.getUrl() }}" class="service-icon" />
+            <img src="{{ icon.getUrl('icon') }}" class="service-icon" />
         {% endif %}
-        <div class="small-text">{{ block.smallTitleText }}</div>
-        <div class="large-text">{{ block.largeTitleText }}</div>
-        <div>
+        <h3>
+            <span class="small-text">{{ block.smallTitleText }}</span>
+            <span class="large-text">{{ block.largeTitleText }}</span>
+        </h3>
+        <div class="blurb-text">
             {{ block.blurbText }}
         </div>
     </div>

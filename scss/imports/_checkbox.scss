@@ -14,7 +14,7 @@
 
 .form-check-input + .ck:before, .form-check-input + input[type="hidden"] + .ck:before {
     text-shadow: -1px -1px 0 $red, 1px -1px 0 $red, -1px 1px 0 $red, 1px 1px 0 $red;
-    color: $white;
+    color: $red;
     margin-right: 10px;
     content: "\f0c8";
     font-family: FontAwesome;
