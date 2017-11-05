@@ -1,10 +1,35 @@
 @import './common';
 
 #financial-coaching-page {
+  
   h1 {
     @extend .page-title;
   }
 
+  h2 {
+    color: $blue;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 1rem;
+  }
+
+  .financial-coaching-section {
+    padding: $spacing;
+    padding-left: 35px;
+  }
+
+  .support-section {
+    background-color: $lighter-gray;
+    padding: $spacing;
+    padding-left: 35px;
+
+  }
+
+  .income-section {
+    background-color: $light-gray;
+    padding: $spacing;
+    padding-left: 35px;
+  }
   .page-blurb {
 
   }
