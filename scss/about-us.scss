@@ -6,18 +6,18 @@
     h1{
         @extend .page-title;
     }
-      
+
     .section-description {
         color: $font;
     }
-    
+
     h2{
         color: $blue;
         text-transform: uppercase;
         margin: 0;
         margin-top: 1rem;
     }
-    
+
     .mission-section{
         padding: $spacing;
         padding-left: 35px;
@@ -35,4 +35,42 @@
         padding: $spacing;
         padding-left: 35px;
     }
+
+
+  .downloads-list {
+    margin: $spacing*2 (-$spacing/2);
+    display: flex;
+    flex-wrap: wrap;
+    .download {
+      cursor: pointer;
+      text-decoration: none;
+      flex: 1;
+      display: block;
+      background-color: $light-gray;
+      min-width: 325px;
+      padding: $spacing * 2;
+      margin: $spacing/2;
+
+      &:hover {
+        background-color: #ddd;
+      }
+
+      h3 {
+        margin: 0;
+        color: $blue;
+        text-transform: uppercase;
+        span {
+          display: block;
+          font-size: 2rem;
+        }
+      }
+
+      .icon {
+        float: right;
+        color: $blue;
+        line-height: 0;
+        margin: 32px 0;
+      }
+    }
+  }
 }
