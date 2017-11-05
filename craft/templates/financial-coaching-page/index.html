@@ -4,31 +4,42 @@
 {% include 'hero' %}
 
 <div id="financial-coaching-page">
+  <div class="financial-coaching-section">
     <h2 class="section-title">
         {{entry.financialCoachingTitle}}
     </h2>
     <div class="section-description">
         {{entry.financialCoachingDescription}}
     </div>
+  </div>  
 
+  <div class="income-section">
     <h2 class="section-title">
         {{entry.incomeTitle}}
     </h2>
     <div class="section-description">
         {{entry.incomeDescription}}
     </div>
+  </div>  
 
+  <div class="support-section">
     <h2 class="section-title">
       {{entry.supportTitle}}
     </h2>
     <div class="section-description">
       {{entry.supportDescription}}
     </div>
+  </div>  
 
-   <div class="money-matters-banner">
-     <h3>{{entry.bannerTitle}}</h3>
-     <div>{{entry.bannerBlurb}}</div>
-   </div>
+  
+  <div class="money-matters-banner">
+    <img class="money-matters-logo"
+      src="#" width="200px" height="200px" />
+    <div class="money-matters-blurb">
+      <h3>{{entry.bannerTitle}}</h3>
+      <div>{{entry.bannerBlurb}}</div>
+    </div>
+  </div>
 
    <div class="downloads-list">
      {% for download in entry.fileDownload %}

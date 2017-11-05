@@ -20,6 +20,9 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/rangeslider.js@2.3.1/dist/rangeslider.css" integrity="sha256-jJApoDvazb6sRGbc3gE+wdEAE0cE0H1Ag3k1qCada9c=" crossorigin="anonymous">
+  <script>
+    var INCOME_LIMITS = {{ incomeLimits.annualIncomeLimits | raw }};
+  </script>
   {% includeCssFile "/assets/css/base.css" %}
 </head>
 
@@ -36,7 +39,7 @@
 				<li><a href="/es/{{ entry.uri }}">{{ navigation.language }}</a></li>
         {% endif %}
 				<li><a href="{{ url('homeowner-services') }}" {% if craft.request.firstSegment == 'homeowner-services' %}class="active"{% endif %}>{{ navigation.services }}</a></li>
-				<li><a href="{{ url('about-us') }}" {% if craft.request.firstSegment == 'aboutUs' %}class="active"{% endif %}>{{ navigation.aboutUs }}</a></li>
+				<li><a href="{{ url('about-us') }}" {% if craft.request.firstSegment == 'about-us' %}class="active"{% endif %}>{{ navigation.aboutUs }}</a></li>
         <li><a href="{{ url('donate') }}" class="button {% if craft.request.firstSegment == 'donate' %} active{% endif %}">{{ navigation.donate }}</a></li>
 			</ul>
     </nav>
