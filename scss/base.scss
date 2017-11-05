@@ -40,13 +40,15 @@ nav {
       &.home {
         display: none;
       }
+
       a {
         color: $font;
         text-decoration: none;
         padding: $spacing;
 
-        &.active {
+        &:hover, &:focus, &.active {
           color: $blue;
+          font-weight: bold;
         }
 
         &.button {
@@ -58,6 +60,10 @@ nav {
           vertical-align: middle;
           display: inline-block;
           border-radius: 10px;
+
+          &:hover, &:focus {
+            background-color: darken($red, 10%);
+          }
         }
       }
     }
