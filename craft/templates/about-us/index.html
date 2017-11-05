@@ -1,0 +1,28 @@
+{% extends "_layout" %}
+{% includeCssFile "/assets/css/about-us.css" %}
+{% block content %}
+<div id="about-us-page">
+    {% include 'hero' %}
+
+    <h2 class="section-title">
+        {{entry.missionTitle}}
+    </h2>
+    <div class="section-description">
+        {{entry.missionDescription}}
+    </div>  
+    
+    <h2 class="section-title">
+        {{entry.valuesTitle}}
+    </h2>
+    <div class="section-description">
+        {{entry.valuesDescription}}
+    </div>
+    
+    <h2 class="section-title">
+        {{entry.visionTitle}}
+    </h2>
+    <div class="section-description">
+        {{entry.visionDescription}}
+    </div>
+</div>
+{% endblock %}

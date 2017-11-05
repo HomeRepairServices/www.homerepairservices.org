@@ -1,0 +1,7 @@
+@import './common';
+
+#about-us-page {
+    h1 {
+        @extend .page-title;
+    } 
+}

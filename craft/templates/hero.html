@@ -1,7 +1,9 @@
 <div id="hero">
   {% includeCssFile "/assets/css/hero.css" %}
   {% set image = entry.hero.first() %}
+  {% if image %}
   <img src="{{ image.getUrl('heroImage') }}" class="hero" />
+  {% endif %}
   <div class="hero-title">
     <div class="hero-blurb"></div>
     <h3>{{ entry.smallTitleText }}</h3>

@@ -1,0 +1,11 @@
+@import './common';
+
+#financial-coaching-page {
+    h1 {
+        @extend .page-title;
+    }
+
+    .page-blurb {
+        
+    }    
+}
