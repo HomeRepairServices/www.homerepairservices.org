@@ -31,11 +31,15 @@
     </div>
   </div>  
 
-   <div class="money-matters-banner">
-     <img width="200px" height="200px" />
-     <h3>{{entry.bannerTitle}}</h3>
-     <div>{{entry.bannerBlurb}}</div>
-   </div>
+  
+  <div class="money-matters-banner">
+    <img class="money-matters-logo"
+      src="#" width="200px" height="200px" />
+    <div class="money-matters-blurb">
+      <h3>{{entry.bannerTitle}}</h3>
+      <div>{{entry.bannerBlurb}}</div>
+    </div>
+  </div>
 
    <div class="downloads-list">
      {% for download in entry.fileDownload %}

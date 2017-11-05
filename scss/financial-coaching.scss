@@ -19,16 +19,32 @@
   }
 
   .support-section {
-    background-color: $lighter-gray;
+    background-color: $light-gray;
     padding: $spacing;
     padding-left: 35px;
 
   }
 
   .income-section {
-    background-color: $light-gray;
+    background-color: $lighter-gray;
     padding: $spacing;
     padding-left: 35px;
+  }
+
+  .money-matters-banner {
+    display: flex;
+    background-color: $green; 
+    color: $white;
+    padding: $spacing;
+    
+  }
+
+  .money-matters-blurb{
+    padding-left: $spacing*2;
+    border-left: 1px solid $white;
+    h3{
+      text-transform: uppercase;
+    }
   }
 
   .downloads-list {

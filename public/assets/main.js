@@ -1,7 +1,15 @@
 window.onload = function() {
+  $('input[type="range"]').rangeslider({
+    polyfill: false
+  });
+
+  $('.household-input .rangeslider__handle').html('<i class="fa fa-caret-left"></i><span class="handle-value" data-bind="text: qualify.household"></span><i class="fa fa-caret-right"></i>');
+  $('.income-input .rangeslider__handle').html('<i class="fa fa-caret-left"></i><span class="handle-value" data-bind="text: qualify.incomeText"></span><i class="fa fa-caret-right"></i>');
+
   var viewModel = new ViewModel();
   ko.applyBindings(viewModel);
-  $('input[type=range]').rangeslider();
+
+  $('input[type="range"]').change();
 }
 
 function ViewModel() {
@@ -13,61 +21,55 @@ function ViewModel() {
 function QualificationModel() {
   var $scope = this;
 
-  // variables
   $scope.homeOwner = ko.observable(true);
+  $scope.ageBased = ko.observable(true);
   $scope.overSixty = ko.observable(false);
   $scope.household = ko.observable(1);
   $scope.income = ko.observable(20000);
+  $scope.qualified = ko.observable(true);
 
-  // show info
   $scope.incomeText = ko.computed(function() {
-    return $scope.income() + ' yr';
+    return '$' + $scope.income();
   });
 
-  // check qualifications
-  $scope.homeRepairs = ko.observable(true);
-  $scope.otherServices = ko.observable(true);
+  $scope.$services = $('.income-limited-service');
 
   var checkQualifications = ko.computed(function() {
     if (!$scope.homeOwner()) {
-      $scope.homeRepairs(false);
-      $scope.otherServices(false);
+      $scope.$services.css('display', 'none');
       return;
     }
 
-    // other services for all ages
-    // are the same as over 60 home repairs
-
-    var matrix = [
-      [0, 0],
-      // < 60, > 60  | household
-      [23250, 37150],// 1
-      [26550, 42450],// 2
-      [29850, 47750],// 3
-      [33150, 53050],// 4
-      [35850, 57300],// 5
-      [38500, 61550],// 6
-      [41150, 65800],// 7
-      [43800, 70050],// 8
-      [46450, 74250],// 9
-      [49100, 78500]// 10
-    ];
-
     var household = $scope.household();
-    var income = $scope.income();
+    INCOME_LIMITS.forEach(function(householdLimit) {
+      if (householdLimit['Household'] == household) {
+        var income = $scope.income();
+        var ageBasedQualified;
+        if ($scope.overSixty()) {
+          ageBasedQualified = income <= householdLimit['Over 60'];
+        } else {
+          ageBasedQualified = income <= householdLimit['Under 60'];
+        }
+        var allAgesQualified = income <= householdLimit['All ages'];
 
-    var limit = matrix[household][1];
-    var qualified = income <= limit;
+        $scope.$services.each(function() {
+          if ($(this).data('uses-age-based-criteria') == 1) {
+            if (ageBasedQualified) {
+              $(this).show();
+            } else {
+              $(this).hide();
+            }
+          } else {
+            if (allAgesQualified) {
+              $(this).show();
+            } else {
+              $(this).hide();
+            }
+          }
+        });
 
-    $scope.otherServices(qualified);
-
-    if ($scope.overSixty()) {
-      $scope.homeRepairs(qualified);
-    } else {
-      limit = matrix[household][0];
-      qualified = income <= limit;
-      $scope.homeRepairs(qualified);
-    }
+      }
+    });
   });
 
 }
