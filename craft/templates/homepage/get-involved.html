@@ -3,8 +3,25 @@
         {{ entry.servicesTitleText }}
     </h1>
     <div class="row">
-    {% for entry in craft.entries.section('homepageServices').limit(3).find() %}
-        {% include 'homepage/_get-involved-item' %}
+    {% for serviceBlock in entry.serviceBlock %}
+    <div class="services-entry-wrapper col-xs-12 col-sm-4 {{ (serviceBlock == 'free-open-services' ? 'center-service' : '') }}">
+        <div class="services-entry">
+            <h2 class="title-text">
+                <div class="services-small-title-text">
+                    {{serviceBlock.smallTitleText|raw }}
+                </div>
+                <div class="services-large-title-text">
+                    {{serviceBlock.largeTitleText|raw }}
+                </div>
+            </h2>
+            <div class="services-blurb-text">
+                {{ serviceBlock.blurb }}
+            </div>
+            <a class="services-link" href="{{serviceBlock.learnMoreLink}}">
+                {{ entry.homepageServicesLinkText }}
+            </a>
+        </div>
+    </div>
     {% endfor %}
     </div>
 </div>
