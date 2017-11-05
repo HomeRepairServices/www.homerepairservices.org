@@ -13,13 +13,19 @@
         {% if icon %}
             <img src="{{ icon.getUrl('icon') }}" class="service-icon" />
         {% endif %}
-        <h3>
-            <span class="small-text">{{ block.smallTitleText }}</span>
-            <span class="large-text">{{ block.largeTitleText }}</span>
-        </h3>
-        <div class="blurb-text">
-            {{ block.blurbText }}
-        </div>
+            <div class="description">
+              <h3>
+                <span class="small-text">{{ block.smallTitleText }}</span>
+                <span class="large-text">{{ block.largeTitleText }}</span>
+              </h3>
+              <div class="blurb-text">
+                {{ block.blurbText }}
+              </div>
+            </div>
+            <div class="call-to-action">
+              {{ block.callToActionBlurb }}
+              <a href="{{ block.callToActionLink }}">{{block.callToActionButtonText}}</a>
+            </div>
     </div>
     {% endfor %}
 
