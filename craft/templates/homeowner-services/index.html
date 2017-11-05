@@ -1,17 +1,17 @@
 {% extends "_layout" %}
 {% includeCssFile "/assets/css/homeowner-services.css" %}
 {% block content %}
+{% include 'hero' %}
 <div id="homeowner-services-page">
 
-    {% include 'hero' %}
 
     <h2>{{entry.freeAndOpenServicesHeading}}</h2>
 
     {% for block in entry.serviceInfoBlock.type('generalService') %}
     <div class="service-block general-service">
-        {% set icon = block.icon.first() %} 
+        {% set icon = block.icon.first() %}
         {% if icon %}
-            <img src="{{ icon.getUrl('icon') }}" class="service-icon" /> 
+            <img src="{{ icon.getUrl('icon') }}" class="service-icon" />
         {% endif %}
         <h3>
             <span class="small-text">{{ block.smallTitleText }}</span>
@@ -26,11 +26,11 @@
     <h2>{{entry.incomeBasedServicesHeading}}</h2>
 
     {% set widget = entry.incomeBasedServicesWidget.first() %}
-    
+
     <div class="instruction-text">
         {{ widget.instructionText }}
     </div>
-    
+
     <div class="criteria-selection">
         <div class="row">
             <div class="col-xs-12 col-sm-6">
@@ -57,7 +57,7 @@
                 <input type="range" min="0" max="100000" step="50" data-bind="textInput: qualify.income" />
         </div>
     </div>
-    
+
     {% for block in entry.serviceInfoBlock.type('incomeLimited') %}
     <div id="{{block.serviceName|replace({' ': '-'})}}" class="service-block income-limited-service" data-uses-age-based-criteria="{{block.usesAgeBasedCriteria}}">
         {% set icon = block.icon.first() %}
