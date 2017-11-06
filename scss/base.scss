@@ -237,3 +237,7 @@ a {
     color: $font;
   }
 }
+
+p {
+  overflow-wrap: break-word;
+}
