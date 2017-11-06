@@ -37,8 +37,9 @@
     background-color: $green;
     color: $white;
     padding: $spacing;
-    &:hover
-
+    &:hover {
+      background-color: darken($green, 10%);
+    }
   }
 
   .money-matters-blurb{
