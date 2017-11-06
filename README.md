@@ -50,13 +50,7 @@ Now you should be able to visit http://localhost:8888 and see a beautiful websit
 
 ## Development
 
-Changes to the schema and the data (that is, ANYTHING you do via Craft's admin interface) SHOULD BE DONE ON STAGING (https://homerepairservices.herokuapp.com) and then pull down the staging database.
-
-```
-a_script.sh
-```
-
-This is very silly, but the world of CMSs has yet ot learn what a database migration is, so if you make your changes locally, there's no way to apply them to staging.
+Working locally? You'll want to be interacting with a copy of the production database; it has all the juicy CMS configuration in it.
 
 Making changes to the Sass stylesheets? Be sure to have
 
@@ -80,3 +74,15 @@ https://stackoverflow.com/questions/42094994/how-to-enable-imagick-in-mamp-4-lit
 
 
 and you may need to use the command format `Apps/MAMP/bin/php/php7.1.0/php usr/local/bin/composer install` instead of `composer install`
+
+## Apology
+
+Hi there, future developer! This website was developed for free, by 7 people, in 3 days during the 2017 Weekend For Good. Please forgive us our tresspasses.
+
+- Sam Bleckley
+- Jeremy Bell
+- Valentina Valdes
+- Filip Zadro
+- Chris Chocko
+- Stephanie Banks
+- Ariana Walker
