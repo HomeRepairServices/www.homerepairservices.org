@@ -66,18 +66,27 @@
 
     {% for block in entry.serviceInfoBlock.type('incomeLimited') %}
     <div id="{{block.serviceName|replace({' ': '-'})}}" class="service-block income-limited-service" data-uses-age-based-criteria="{{block.usesAgeBasedCriteria}}">
-        {% set icon = block.icon.first() %}
-        {% if icon %}
-            <img src="{{ icon.getUrl('icon') }}" class="service-icon" />
-        {% endif %}
+      {% set icon = block.icon.first() %}
+      {% if icon %}
+      <img src="{{ icon.getUrl('icon') }}" class="service-icon" />
+      {% endif %}
+      <div class="description">
         <h3>
-            <span class="small-text">{{ block.smallTitleText }}</span>
-            <span class="large-text">{{ block.largeTitleText }}</span>
+          <span class="small-text">{{ block.smallTitleText }}</span>
+          <span class="large-text">{{ block.largeTitleText }}</span>
         </h3>
         <div class="blurb-text">
-            {{ block.blurbText }}
+          {{ block.blurbText }}
         </div>
+      </div>
+      <div class="call-to-action">
+        {{ block.callToActionBlurb }}
+        <a href="{{ block.callToActionLink }}">{{block.callToActionButtonText}}</a>
+      </div>
     </div>
     {% endfor %}
+    <div class="service-block" id="unqualified">
+      Sorry, you're not qualified for our income-limited services.
+    </div>
 </div>
 {% endblock %}

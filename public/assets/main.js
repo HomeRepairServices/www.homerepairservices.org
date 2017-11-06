@@ -52,22 +52,31 @@ function QualificationModel() {
         }
         var allAgesQualified = income <= householdLimit['All ages'];
 
-        $scope.$services.each(function() {
+        var showing = $scope.$services.map(function() {
           if ($(this).data('uses-age-based-criteria') == 1) {
             if (ageBasedQualified) {
-              $(this).show();
+              $(this).slideDown(500);
+              return true;
             } else {
-              $(this).hide();
+              $(this).slideUp(500);
+              return false;
             }
           } else {
             if (allAgesQualified) {
-              $(this).show();
+              $(this).slideDown(500);
+              return true;
             } else {
-              $(this).hide();
+              $(this).slideUp(500);
+              return false;
             }
           }
-        });
-
+        }).toArray();
+        console.log(showing);
+        if (showing.some(function(a) {return a;})) {
+          $('#unqualified').slideUp(500);
+        } else {
+          $('#unqualified').slideDown(500);
+        }
       }
     });
   });

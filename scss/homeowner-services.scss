@@ -47,12 +47,12 @@
     .description {
       flex-basis: 640px;
       flex: 1;
-      min-width: 500px;
+      min-width: 300px;
       margin-right: $spacing * 4;
     }
     .call-to-action {
       flex-basis: 640px;
-      min-width: 500px;
+      min-width: 300px;
       flex: 1;
       a {
         text-transform: uppercase;
@@ -69,8 +69,15 @@
         font-weight: bold;
 
         &:hover, &:focus {
-          background-color: darken($red, 10%);
+          background-color: darken($blue, 10%);
         }
+      }
+    }
+
+    @media(max-width: 450px) {
+      padding: 4rem 1rem 1rem;
+      .description {
+        margin-right: 0;
       }
     }
   }
