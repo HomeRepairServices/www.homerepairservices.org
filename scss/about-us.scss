@@ -1,0 +1,105 @@
+@import './common';
+
+
+
+#about-us-page {
+    h1{
+        @extend .page-title;
+    }
+
+    .section-description {
+        color: $font;
+    }
+
+    h2{
+        color: $blue;
+        text-transform: uppercase;
+        margin: 0;
+        margin-top: 1rem;
+    }
+
+    .mission-section{
+        padding: $spacing;
+        padding-left: 35px;
+
+    }
+
+    .values-section{
+        background-color: $lighter-gray;
+        padding: $spacing;
+        padding-left: 35px;
+    }
+
+    .vision-section{
+        background-color: $light-gray;
+        padding: $spacing;
+        padding-left: 35px;
+    }
+
+    .staff-list {
+      margin: $spacing*2 (-$spacing/2);
+      display: flex;
+      .staff-link {
+        display: block;
+        cursor: pointer;
+        text-decoration: none;
+        flex: 1;
+        display: block;
+        background-color: $blue;
+        min-width: 325px;
+        padding: $spacing * 2;
+        margin: $spacing/2;
+
+        &:hover {
+          background-color: darken($blue, 10%);
+        }
+
+        h3 {
+          margin: 0;
+          color: $white;
+          text-transform: uppercase;
+          span {
+            display: block;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+
+  .downloads-list {
+    margin: $spacing*2 (-$spacing/2);
+    display: flex;
+    flex-wrap: wrap;
+    .download {
+      cursor: pointer;
+      text-decoration: none;
+      flex: 1;
+      display: block;
+      background-color: $light-gray;
+      min-width: 325px;
+      padding: $spacing * 2;
+      margin: $spacing/2;
+
+      &:hover {
+        background-color: #ddd;
+      }
+
+      h3 {
+        margin: 0;
+        color: $blue;
+        text-transform: uppercase;
+        span {
+          display: block;
+          font-size: 2rem;
+        }
+      }
+
+      .icon {
+        float: right;
+        color: $blue;
+        line-height: 0;
+        margin: 32px 0;
+      }
+    }
+  }
+}

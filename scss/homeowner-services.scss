@@ -1,0 +1,149 @@
+@import './common';
+
+#homeowner-services-page {
+  margin-bottom: $spacing * 2;
+
+  h1 {
+    @extend .page-title;
+  }
+
+  h2 {
+    color: $blue;
+    text-align: center;
+    font-weight: normal;
+    text-transform: uppercase;
+
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  .instruction-text {
+    text-align: center;
+  }
+
+  .service-block {
+    position: relative;
+    margin-top: 3rem;
+    background-color: $light-gray;
+    padding: 1rem 1rem 1rem 8rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    h3 {
+      margin: 0;
+      color: $blue;
+      text-transform: uppercase;
+
+      .small-text {
+        font-size: 1.5rem;
+      }
+
+      .large-text {
+        font-size: 2.5rem;
+        display: block;
+      }
+    }
+    .description {
+      flex-basis: 640px;
+      flex: 1;
+      min-width: 300px;
+      margin-right: $spacing * 4;
+    }
+    .call-to-action {
+      flex-basis: 640px;
+      min-width: 300px;
+      flex: 1;
+      a {
+        text-transform: uppercase;
+        background-color: $blue;
+        color: $white;
+        padding: $spacing;
+        vertical-align: middle;
+        display: inline-block;
+        border-radius: 10px;
+        margin: $spacing 0;
+        text-decoration: none;
+        text-align: center;
+        line-height: 1.5;
+        font-weight: bold;
+
+        &:hover, &:focus {
+          background-color: darken($blue, 10%);
+        }
+      }
+    }
+
+    @media(max-width: 450px) {
+      padding: 4rem 1rem 1rem;
+      .description {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .service-icon {
+    position: absolute;
+    top: -1.5rem;
+    left: 2rem;
+  }
+
+  .criteria-selection {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 40px;
+
+    h3 {
+      color: $blue;
+      text-transform: uppercase;
+      font-size: 2rem;
+    }
+
+    .form-check-label  {
+      .label-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+
+    .input-group {
+      margin: 0 10px;
+    }
+
+    .rangeslider {
+      height: 25px;
+      border-radius: 15px;
+    }
+
+    .rangeslider__fill {
+      background: linear-gradient(90deg, #B3DDE9, #69B5CE);
+      border-radius: 15px;
+    }
+
+    .rangeslider__handle {
+      border-radius: 25px;
+      width: 100px;
+      height: 50px;
+      margin-top: -5px;
+
+      &::after {
+        display: none;
+      }
+
+      i {
+        color: #cbcbcb;
+        font-size: 24px;
+        margin-top: 13px;
+      }
+
+      .handle-value {
+        font-family: sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0 5px;
+        color: #2f80ab;
+      }
+    }
+  }
+}

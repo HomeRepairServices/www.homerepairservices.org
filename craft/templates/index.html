@@ -20,12 +20,9 @@
 {% extends "_layout" %}
 {% includeCssFile "/assets/css/home-page.css" %}
 {% block content %}
+{% include 'hero' %}
 <div id="home-page">
-	{% include 'hero' %}
-
 	{% include 'homepage/get-involved' %}
-
-	{% include 'homepage/financial-coaching' %}
 
   {% include 'homepage/instafeed' %}
 </div>

@@ -1,0 +1,60 @@
+{% extends "_layout" %}
+{% includeCssFile "/assets/css/donate-page.css" %}
+{% block content %}
+{% include 'hero' %}
+
+<div id="donate-page">
+<h2>Make a <span>Donation</span></h2>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+  <input name="cmd" type="hidden" value="_donations">
+  <input name="business" type="hidden" value="mmartin@homerepairservices.org">
+  <input name="lc" type="hidden" value="US">
+  <input name="cn" type="hidden" value="Add a message with your donation">
+  <input name="no_shipping" type="hidden" value="1">
+  <input id="amount" type="hidden" name="amount" value="0">
+  <input name="currency_code" type="hidden" value="USD">
+  <input name="bn" type="hidden" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHosted">
+
+
+<div class="block">
+  {% for block in entry.donationActions.limit(3) %}
+  <div class="action">
+    {% if block.type == "donationAction" %}
+    <h3 class="small">{{ block.smallTitle }}</h3>
+    <h3 class="large">{{ block.bigTitle }}</h3>
+    <button class="link-button" type="submit" data-amount="{{block.amount}}" onclick="$('#amount').val($(this).data('amount'));">
+      {{ block.buttonText }}
+    </button>
+    {% elseif block.type == "text" %}
+    <div class="blurb">{{ block.blurb }}</div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+</form>
+<h2>Offer <span>Support</span></h2>
+<div class="block">
+  {% for block in entry.donationActions.offset(3).limit(3) %}
+  <div class="action">
+    {% if block.type == "donationAction" %}
+    <h3 class="small">{{ block.smallTitle }}</h3>
+    <h3 class="large">{{ block.bigTitle }}</h3>
+    <a href="{{block.buttonLink}}">{{ block.buttonText }}</a>
+
+    {% elseif block.type == "text" %}
+    {{ block.blurb }}
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+<h2>Key <span>Partners</span></h2>
+<div class="block">
+  {% for block in entry.partners %}
+  <div class="partner">
+    <a href="{{ block.partnerName }}">{{ block.partnerName }}</a>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

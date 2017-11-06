@@ -1,0 +1,54 @@
+{% extends "_layout" %}
+{% includeCssFile "/assets/css/financial-coaching.css" %}
+{% block content %}
+{% include 'hero' %}
+
+<div id="financial-coaching-page">
+  <div class="financial-coaching-section">
+    <h2 class="section-title">
+        {{entry.financialCoachingTitle}}
+    </h2>
+    <div class="section-description">
+        {{entry.financialCoachingDescription}}
+    </div>
+  </div>
+
+  <div class="income-section">
+    <h2 class="section-title">
+        {{entry.incomeTitle}}
+    </h2>
+    <div class="section-description">
+        {{entry.incomeDescription}}
+    </div>
+  </div>
+
+  <div class="support-section">
+    <h2 class="section-title">
+      {{entry.supportTitle}}
+    </h2>
+    <div class="section-description">
+      {{entry.supportDescription}}
+    </div>
+  </div>
+
+
+  <a class="money-matters-banner" href="{{entry.bannerLink}}">
+    <img class="money-matters-logo"
+      src="{{entry.bannerLogo.first().url}}" width="200px" height="200px" />
+    <div class="money-matters-blurb">
+      <h3>{{entry.bannerTitle}}</h3>
+      <div>{{entry.bannerBlurb}}</div>
+    </div>
+  </a>
+
+   <div class="downloads-list">
+     {% for download in entry.fileDownload %}
+     <a class="download" target="_blank"  href="{{download.file.first().url}}">
+       <i class="fa fa-download fa-3x icon"></i>
+       <h3>{{ download.smallTitle }}
+         <span>{{ download.bigTitle }}</span></h3>
+     </a>
+     {% endfor %}
+   </div>
+</div>
+{% endblock %}

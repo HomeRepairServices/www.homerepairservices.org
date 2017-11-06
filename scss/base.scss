@@ -18,10 +18,19 @@ body {
 nav {
   height: 80px;
   background-color: #fff;
+
+  .logo {
+    height: 60px;
+    margin: 10px 0;
+    @media(max-width: 1280px) {
+      margin-left: 10px;
+    }
+  }
   ul {
     float: right;
     margin: 0;
     padding: 0;
+
     li {
       display: inline-block;
       line-height: 0;
@@ -30,12 +39,26 @@ nav {
       text-align: center;
       vertical-align: middle;
       text-transform: uppercase;
+
+      &.home {
+        display: none;
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+
+      .fa {
+        line-height: 0;
+      }
       a {
         color: $font;
         text-decoration: none;
+        padding: $spacing;
 
-        &.active {
+        &:hover, &:focus, &.active {
           color: $blue;
+          font-weight: bold;
         }
 
         &.button {
@@ -47,6 +70,54 @@ nav {
           vertical-align: middle;
           display: inline-block;
           border-radius: 10px;
+
+          &:hover, &:focus {
+            background-color: darken($red, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  @media(max-width: 870px) {
+    .logo {
+      display: none;
+    }
+    ul li {
+      padding: 40px 10px;
+      &.home {
+        display: inline-block;
+      }
+    }
+  }
+
+
+  @media(max-width: 640px) {
+    height: auto;
+    .logo {
+      display: none;
+    }
+    ul {
+      width: 100%;
+      float: none;
+      li {
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid #ddd;
+        padding: 0;
+        a {
+          line-height: 1;
+          display: block;
+          height: 100%;
+
+          &.button {
+            background-color: $red;
+            color: $white;
+            line-height: 1;
+            display: block;
+            border-radius: 0;
+            margin: 0;
+          }
         }
       }
     }
@@ -104,7 +175,7 @@ footer {
   .contact-us {
     flex: 1;
     width: 30%;
-    min-width: 325px;
+    min-width: 300px;
     font-size: 12;
     ul {
       margin: 0;
@@ -137,9 +208,36 @@ footer {
   .mission {
     flex: 1;
     width: 60%;
-    min-width: 325px;
     font-size: 12;
     margin-right: $spacing * 2;
     margin-bottom: $spacing;
   }
+}
+
+.language-toggle {
+  display: inline-block;
+  line-height: 0;
+  color: $light-gray;
+  padding: 0 3px;
+
+  @media(max-width: 640px) {
+    line-height: 1;
+    padding: 10px;
+  }
+
+  &.active {
+    color: $font;
+  }
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  &:hover {
+    color: $font;
+  }
+}
+
+p {
+  overflow-wrap: break-word;
 }

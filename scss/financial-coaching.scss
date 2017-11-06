@@ -1,0 +1,93 @@
+@import './common';
+
+#financial-coaching-page {
+
+  h1 {
+    @extend .page-title;
+  }
+
+  h2 {
+    color: $blue;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 1rem;
+  }
+
+  .financial-coaching-section {
+    padding: $spacing;
+    padding-left: 35px;
+  }
+
+  .support-section {
+    background-color: $light-gray;
+    padding: $spacing;
+    padding-left: 35px;
+
+  }
+
+  .income-section {
+    background-color: $lighter-gray;
+    padding: $spacing;
+    padding-left: 35px;
+  }
+
+  .money-matters-banner {
+    cursor: pointer;
+    display: flex;
+    background-color: $green;
+    color: $white;
+    padding: $spacing;
+    &:hover {
+      background-color: darken($green, 10%);
+    }
+  }
+
+  .money-matters-blurb{
+    padding-left: $spacing*2;
+    margin-left: $spacing*2;
+    border-left: 1px solid $white;
+    font-size: 1.5rem;
+    h3{
+      text-transform: uppercase;
+      font-size: 2.3rem;
+      margin: $spacing 0;
+    }
+  }
+
+  .downloads-list {
+    margin: $spacing*2 (-$spacing/2);
+    display: flex;
+    flex-wrap: wrap;
+    .download {
+      cursor: pointer;
+      text-decoration: none;
+      flex: 1;
+      display: block;
+      background-color: $light-gray;
+      min-width: 325px;
+      padding: $spacing * 2;
+      margin: $spacing/2;
+
+      &:hover {
+        background-color: #ddd;
+      }
+
+      h3 {
+        margin: 0;
+        color: $blue;
+        text-transform: uppercase;
+        span {
+          display: block;
+          font-size: 2rem;
+        }
+      }
+
+      .icon {
+        float: right;
+        color: $blue;
+        line-height: 0;
+        margin: 32px 0;
+      }
+    }
+  }
+}

@@ -3,3 +3,10 @@
     padding: 1rem 1.5rem;
     text-decoration: none;
 }
+
+button.link-button {
+    background-color: $red;
+    color: $white;
+    border: none;
+    font-size: 18px;
+}
