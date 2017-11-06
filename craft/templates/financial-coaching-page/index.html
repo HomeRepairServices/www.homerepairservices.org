@@ -32,14 +32,14 @@
   </div>
 
 
-  <div class="money-matters-banner">
+  <a class="money-matters-banner" href="{{entry.bannerLink}}">
     <img class="money-matters-logo"
-      src="#" width="200px" height="200px" />
+      src="{{entry.bannerLogo.first().url}}" width="200px" height="200px" />
     <div class="money-matters-blurb">
       <h3>{{entry.bannerTitle}}</h3>
       <div>{{entry.bannerBlurb}}</div>
     </div>
-  </div>
+  </a>
 
    <div class="downloads-list">
      {% for download in entry.fileDownload %}
