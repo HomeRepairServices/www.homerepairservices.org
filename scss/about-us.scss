@@ -36,6 +36,12 @@
         padding-left: 35px;
     }
 
+    .section {
+      padding: 1rem;
+      padding-left: 35px;
+      color: $font;
+    }
+
     .staff-list {
       margin: $spacing*2 (-$spacing/2);
       display: flex;

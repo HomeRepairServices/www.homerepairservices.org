@@ -31,6 +31,10 @@
     </div>
   </div>
 
+  <div class="section">
+    {{entry.history}}
+  </div>
+
    <div class="staff-list">
      {% for link in entry.staffLink %}
      <a class="staff-link" href="{{ url(link.linkSlug) }}" style="background-image: url({{link.backgroundImage.first().url}})">
