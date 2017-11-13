@@ -4,89 +4,89 @@
 {% include 'hero' %}
 <div id="homeowner-services-page">
 
+  <h2>{{entry.incomeBasedServicesHeading}}</h2>
 
-    <h2>{{entry.freeAndOpenServicesHeading}}</h2>
+  {% set widget = entry.incomeBasedServicesWidget.first() %}
 
-    {% for block in entry.serviceInfoBlock.type('generalService') %}
-    <div class="service-block general-service">
-        {% set icon = block.icon.first() %}
-        {% if icon %}
-            <img src="{{ icon.getUrl('icon') }}" class="service-icon" />
-        {% endif %}
-            <div class="description">
-              <h3>
-                <span class="small-text">{{ block.smallTitleText }}</span>
-                <span class="large-text">{{ block.largeTitleText }}</span>
-              </h3>
-              <div class="blurb-text">
-                {{ block.blurbText }}
-              </div>
-            </div>
-            <div class="call-to-action">
-              {{ block.callToActionBlurb }}
-              <a href="{{ block.callToActionLink }}">{{block.callToActionButtonText}}</a>
-            </div>
-    </div>
-    {% endfor %}
+  <div class="instruction-text">
+    {{ widget.instructionText }}
+  </div>
 
-    <h2>{{entry.incomeBasedServicesHeading}}</h2>
-
-    {% set widget = entry.incomeBasedServicesWidget.first() %}
-
-    <div class="instruction-text">
-        {{ widget.instructionText }}
-    </div>
-
-    <div class="criteria-selection">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <label class="form-check-label">
-                    <input class="form-check-input" name="own-home" id="own-home" type="checkbox" value="true" data-bind="checked: qualify.homeOwner" />
-                    <span class="ck"></span>
-                    <span class="label-text">{{widget.iOwnMyOwnHomeLabel}}</span>
-                </label>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <label class="form-check-label">
-                    <input class="form-check-input" name="over-sixty" id="over-sixty" type="checkbox" value="true" data-bind="checked: qualify.overSixty" />
-                    <span class="ck"></span>
-                    <span class="label-text">{{widget.imOver60Label}}</span>
-                </label>
-            </div>
-        </div>
-        <h3>{{widget.householdSizeLabel}}</h3>
-        <div class="household-input input-group">
-                <input type="range" min="0" max="10" step="1" data-bind="textInput: qualify.household" />
-        </div>
-        <h3>{{widget.myIncomeLabel}}</h3>
-        <div class="income-input input-group">
-                <input type="range" min="0" max="100000" step="50" data-bind="textInput: qualify.income" />
-        </div>
-    </div>
-
-    {% for block in entry.serviceInfoBlock.type('incomeLimited') %}
-    <div id="{{block.serviceName|replace({' ': '-'})}}" class="service-block income-limited-service" data-uses-age-based-criteria="{{block.usesAgeBasedCriteria}}">
-      {% set icon = block.icon.first() %}
-      {% if icon %}
-      <img src="{{ icon.getUrl('icon') }}" class="service-icon" />
-      {% endif %}
-      <div class="description">
-        <h3>
-          <span class="small-text">{{ block.smallTitleText }}</span>
-          <span class="large-text">{{ block.largeTitleText }}</span>
-        </h3>
-        <div class="blurb-text">
-          {{ block.blurbText }}
-        </div>
+  <div class="criteria-selection">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <label class="form-check-label">
+          <input class="form-check-input" name="own-home" id="own-home" type="checkbox" value="true" data-bind="checked: qualify.homeOwner" />
+          <span class="ck"></span>
+          <span class="label-text">{{widget.iOwnMyOwnHomeLabel}}</span>
+        </label>
       </div>
-      <div class="call-to-action">
-        {{ block.callToActionBlurb }}
-        <a href="{{ block.callToActionLink }}">{{block.callToActionButtonText}}</a>
+      <div class="col-xs-12 col-sm-6">
+        <label class="form-check-label">
+          <input class="form-check-input" name="over-sixty" id="over-sixty" type="checkbox" value="true" data-bind="checked: qualify.overSixty" />
+          <span class="ck"></span>
+          <span class="label-text">{{widget.imOver60Label}}</span>
+        </label>
       </div>
     </div>
-    {% endfor %}
-    <div class="service-block" id="unqualified">
-      {{entry.unqualifiedText}}
+    <h3>{{widget.householdSizeLabel}}</h3>
+    <div class="household-input input-group">
+      <input type="range" min="0" max="10" step="1" data-bind="textInput: qualify.household" />
     </div>
+    <h3>{{widget.myIncomeLabel}}</h3>
+    <div class="income-input input-group">
+      <input type="range" min="0" max="100000" step="50" data-bind="textInput: qualify.income" />
+    </div>
+  </div>
+
+  {% for block in entry.serviceInfoBlock.type('incomeLimited') %}
+  <div id="{{block.serviceName|replace({' ': '-'})}}" class="service-block income-limited-service" data-uses-age-based-criteria="{{block.usesAgeBasedCriteria}}">
+    {% set icon = block.icon.first() %}
+    {% if icon %}
+    <img src="{{ icon.getUrl('icon') }}" class="service-icon" />
+    {% endif %}
+    <div class="description">
+      <h3>
+        <span class="small-text">{{ block.smallTitleText }}</span>
+        <span class="large-text">{{ block.largeTitleText }}</span>
+      </h3>
+      <div class="blurb-text">
+        {{ block.blurbText }}
+      </div>
+    </div>
+    <div class="call-to-action">
+      {{ block.callToActionBlurb }}
+      <a href="{{ block.callToActionLink }}">{{block.callToActionButtonText}}</a>
+    </div>
+  </div>
+  {% endfor %}
+  <div class="service-block" id="unqualified">
+    {{entry.unqualifiedText}}
+  </div>
+
+  <h2>{{entry.freeAndOpenServicesHeading}}</h2>
+
+  {% for block in entry.serviceInfoBlock.type('generalService') %}
+  <div class="service-block general-service">
+    {% set icon = block.icon.first() %}
+    {% if icon %}
+    <img src="{{ icon.getUrl('icon') }}" class="service-icon" />
+    {% endif %}
+    <div class="description">
+      <h3>
+        <span class="small-text">{{ block.smallTitleText }}</span>
+        <span class="large-text">{{ block.largeTitleText }}</span>
+      </h3>
+      <div class="blurb-text">
+        {{ block.blurbText }}
+      </div>
+    </div>
+    <div class="call-to-action">
+      {{ block.callToActionBlurb }}
+      <a href="{{ block.callToActionLink }}">{{block.callToActionButtonText}}</a>
+    </div>
+  </div>
+  {% endfor %}
+
 </div>
 {% endblock %}
