@@ -86,3 +86,4 @@ Hi there, future developer! This website was developed for free, by 7 people, in
 - Chris Chocko
 - Stephanie Banks
 - Ariana Walker
+
